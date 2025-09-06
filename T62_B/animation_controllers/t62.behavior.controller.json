@@ -1,0 +1,120 @@
+/*
+
+	Hello, dear fellow reverse engineers :D
+
+	You can tear this addon apart 
+	and rip the parts off 
+	and make it your own, 
+	please just make sure 
+	you give me the proper credits.
+	Thank you.
+
+	- MyoHtet @bmheades
+
+*/
+
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {     
+		"controller.animation.t62_drivef": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "driving0": "query.is_moving"
+                        }
+                    ],
+					"on_entry": [
+                        "@s tank:not_driving"
+                    ]
+                },
+                "driving0": {
+                    "transitions": [
+                        {
+                            "default": "!query.is_moving"
+                        },
+						{
+                            "driving1": "query.is_moving"
+                        }
+                    ],
+					"on_entry": [
+                        "@s tank:drive0"
+                    ]            
+                },
+				"driving1": {
+                    "transitions": [
+                        {
+                            "default": "!query.is_moving"
+                        },
+						{
+                            "driving0": "query.is_moving"
+                        }
+                    ],
+					"on_entry": [
+                        "@s tank:drive1"
+                    ]            
+                }
+            }
+		},
+		"controller.animation.ironmaneffect": {
+		"initial_state": "default",
+		"states": {
+        "default": {
+          "transitions": [
+            {
+              "default1": "query.has_rider"
+            }
+          ]
+        },
+        "default1": {
+          "transitions": [
+            {
+              "default": "!query.has_rider"
+            },
+			{
+              "default2": "query.has_rider"
+            }
+          ],
+          "on_entry": [
+            "/function ironman"
+          ]
+        },
+		"default2": {
+          "transitions": [
+            {
+              "default": "!query.has_rider"
+            },
+			{
+              "default1": "query.has_rider"
+            }
+          ],
+          "on_entry": [
+            "/function ironman"
+          ]
+        }
+      }
+    },
+	"controller.animation.welcome": {
+		"initial_state": "default",
+		"states": {
+        "default": {
+          "transitions": [
+            {
+              "tell": "query.has_rider"
+            }
+          ]
+        },
+        "tell": {
+          "transitions": [
+            {
+              "default": "!query.has_rider"
+            }
+          ],
+          "on_entry": [
+            "/function welcome"
+          ]
+        }
+      }
+    }
+    }
+}

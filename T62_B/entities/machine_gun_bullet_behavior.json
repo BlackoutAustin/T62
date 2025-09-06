@@ -1,0 +1,96 @@
+/*
+
+	Hello, dear fellow reverse engineers :D
+
+	You can tear this addon apart 
+	and rip the parts off 
+	and make it your own, 
+	please just make sure 
+	you give me the proper credits.
+	Thank you.
+
+	- MyoHtet @bmheades
+
+*/
+
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "bm:machine_gun_bullet",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "runtime_identifier": "minecraft:snowball"
+    },
+	"component_groups": {
+	
+   },
+    "components": {
+		
+		"minecraft:break_blocks": {
+				"breakable_blocks": [
+					"grass",
+					"stone",
+					"stained_glass",
+					"stained_glass_pane",
+					"standing_sign",
+					"vine",
+					"wall_banner",
+					"wall_sign",
+					"web",
+					"wheat"
+				] 
+			},
+			
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+	  "minecraft:scale": {
+				"value": 0.5
+	  },
+     "minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": [
+								12,
+								16
+							],
+							"knockback": true
+						},
+						 "particle_on_hit": {
+							"particle_type": "bref",
+							"num_particles": 6,
+							"on_entity_hit": true,
+							"on_other_hit": true
+						},
+						"remove_on_hit": { }
+					},
+					"power": 5,
+					"gravity": 0,
+					"inertia": 1,
+					"uncertaintyBase": 1,
+					"uncertaintyMultiplier": 1,
+					"anchor": 1,
+					"offset": [
+						0,
+						0,
+						0
+					],
+					"reflectOnHurt": false,
+					"should_bounce": true
+					//"particle": 
+				},
+	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+	"events": {
+
+   }
+  }
+}

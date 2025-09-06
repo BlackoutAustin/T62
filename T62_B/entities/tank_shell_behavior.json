@@ -1,0 +1,94 @@
+/*
+
+	Hello, dear fellow reverse engineers :D
+
+	You can tear this addon apart 
+	and rip the parts off 
+	and make it your own, 
+	please just make sure 
+	you give me the proper credits.
+	Thank you.
+
+	- MyoHtet @bmheades
+
+*/
+
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "bm:tank_shell",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "runtime_identifier": "minecraft:snowball"
+    },
+	"component_groups": {
+		"minecraft:exploding": {
+    "minecraft:explode": {
+     "fuse_length": 0,
+     "fuse_lit": true,
+     "power": 3,
+     "causes_fire": true,
+     "fire_affected_by_griefing": true,
+     "destroy_affected_by_griefing": true
+    }
+   }
+   },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+	  "minecraft:scale": {
+				"value": 0.5
+	  },
+     "minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": [
+								40,
+								30
+							],
+							"knockback": true
+						},
+						
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+							}
+						}
+					},
+					"power": 5,
+					"gravity": 0,
+					"inertia": 1,
+					"uncertaintyBase": 1,
+					"uncertaintyMultiplier": 1,
+					"anchor": 1,
+					"offset": [
+						0,
+						0,
+						0
+					],
+					"reflectOnHurt": false
+				},
+	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+	"events": {
+"minecraft:explode": {
+    "add": {
+     "component_groups": [
+      "minecraft:exploding"
+     ]
+    }
+   }
+   }
+  }
+}

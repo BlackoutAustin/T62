@@ -1,0 +1,47 @@
+/*
+
+	Hello, dear fellow reverse engineers :D
+
+	You can tear this addon apart 
+	and rip the parts off 
+	and make it your own, 
+	please just make sure 
+	you give me the proper credits.
+	Thank you.
+
+	- MyoHtet @bmheades
+
+*/
+
+{
+    "format_version": "1.13.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bm:t62_egg"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+      "IRI",
+      "ITI",
+      "III"
+    ],
+    "key": {
+      "R": {
+        "item": "minecraft:redstone_block"
+      },
+      "I": {
+        "item": "minecraft:iron_block"
+      },
+      "T": {
+        "item": "minecraft:tnt"
+      }
+    },
+        "result":
+            {
+                "item": "spawn_egg",
+                "data": "query.get_actor_info_id('bm:t62')"
+            }
+    }
+}
