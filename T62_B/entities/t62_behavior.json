@@ -1,20 +1,5 @@
-/*
-
-	Hello, dear fellow reverse engineers :D
-
-	You can tear this addon apart 
-	and rip the parts off 
-	and make it your own, 
-	please just make sure 
-	you give me the proper credits.
-	Thank you.
-
-	- MyoHtet @bmheades
-
-*/
-
 {
-	"format_version": "1.13.0", //1.13.0
+	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "bm:t62",
@@ -45,8 +30,6 @@
 					"value": 1
 				}
 			},
-			
-			// machine gun
 			
 			"machinegun:ready": {
 				"minecraft:mark_variant": {
@@ -109,7 +92,6 @@
 					"single_use": false,
 					"spawn_entity": "bm:machine_gun_bullet",
 					"num_to_spawn": 1
-					//"spawn_sound": "explode"
 				}],
 				"minecraft:timer": {
 					"time": 0.3,
@@ -120,8 +102,6 @@
 					}
 				}
 			},
-			
-			// main gun 
 			
 			"maingun:ready": {
 				
@@ -138,7 +118,6 @@
 				}, 
 				"cooldown": 2,
 				"use_item": false,
-				//"play_sounds": "explode",
 				"spawn_entities": "bm:tank_shell",
 				"interact_text": "action.interact.creeper"
 				}
@@ -303,8 +282,6 @@
 				}
 			},
 			
-			// machine gun
-				
 			"machinegun:shoot": {
 				"add": {
 					"component_groups": [
@@ -329,8 +306,6 @@
 					]
 				}
 			},
-			
-			// 	For driving chain animation	
 			
 			"tank:not_driving": {			
 				"remove": {
@@ -365,9 +340,6 @@
 				}
 			},
 			
-			// main gun 
-			
-		
 			"maingun:shoot_animation_start": {
 				"add": {
 					"component_groups": [

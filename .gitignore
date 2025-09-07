@@ -1,0 +1,21 @@
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.mcpack
+*.mcaddon
+
+# Logs
+*.log
