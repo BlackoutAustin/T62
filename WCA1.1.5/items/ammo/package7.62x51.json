@@ -1,0 +1,37 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:ammo7.62x51",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.gunammogun",
+        "is_hidden_in_commands": false
+      }
+    },
+    "components": {
+      "minecraft:stacked_by_data": true,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 64,
+      "minecraft:use_duration": 999999,
+      "minecraft:allow_off_hand": false,
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 0
+      },
+      "minecraft:icon": {
+        "texture": "ammo7.62x51"
+      },
+      "minecraft:display_name": {
+        "value": "ammo 7.62×51"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:creative_category": {
+        "parent": "equipment"
+      }
+    }
+  }
+}

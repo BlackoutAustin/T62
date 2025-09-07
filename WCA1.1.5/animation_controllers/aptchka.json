@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.aptechka": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "reload": "query.is_item_name_any('slot.weapon.mainhand',1,'addon:aptechka') && q.is_using_item"
+                        }
+                    ]
+                },
+                "reload": {
+                    "animations": [
+                        "aptechka"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        },
+                        {
+                            "unreload": "!query.is_item_name_any('slot.weapon.mainhand',1,'addon:aptechka')"
+                        }
+                    ]
+                },
+                "unreload": {
+                    "on_entry": [
+                    ],
+                    "transitions": [
+                        {
+                            "default": "1.0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

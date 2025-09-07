@@ -1,0 +1,21 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.asvalreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.251,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "3.25": [  "/event entity @s gun:full", "/clear @s addon:asval_mag 0 1", "/give @s addon:asval_mag_empty", "/scoreboard players set @s asval 1" ]
+            }
+        },
+        "animation.asvalreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.8751,
+            "timeline": {
+                  "0.0": [ "/execute at @s[hasitem={item=addon:asval}] run replaceitem entity @s slot.weapon.mainhand 0 addon:asval", "/execute at @s[hasitem={item=addon:asval_gp25}] run replaceitem entity @s slot.weapon.mainhand 0 addon:asval_gp25","/event entity @s gun:reload2"],
+                  "1.875": [ "/clear @s addon:asval 0 1", "/clear @s addon:asval_gp25 0 1","/function asvalreload", "/scoreboard players set @s asval 0", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

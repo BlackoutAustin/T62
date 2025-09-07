@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.rgd5_use": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.25,
+            "timeline": {
+            }
+        },
+        "animation.rgd5_unuse": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.251,
+            "timeline": {
+                "0.1667": "/event entity @s rgd5",
+                 "0.1668":  "/playsound addon.zapal @a[r=50] ^^^0.10 200 1",
+                  "1.2501":  "/clear @s addon:rgd5 0 1"
+            }
+        }
+    }
+}

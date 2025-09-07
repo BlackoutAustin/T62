@@ -1,0 +1,61 @@
+{
+  "format_version": "1.19.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:uaz469_pass",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+        ]
+      },
+      "animations": {
+      }
+    },
+	  "component_groups": {
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+          "triggers": {
+              "cause": "all",
+              "deals_damage": false
+          }
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "interact_text": "Drive",
+        "seats": [
+          {
+            "position": [0, 0, 0]
+           }
+        ]
+
+      },
+      "minecraft:type_family": {
+        "family": [ "vehicle","vehicle_immunity","uaz469" ]
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true,
+        "totalSupply": 0,
+        "suffocateTime": 0
+      },
+  "minecraft:scale": {
+        "value": 1.0
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+},
+        "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:input_ground_controlled": {
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      }
+    }
+  }
+}

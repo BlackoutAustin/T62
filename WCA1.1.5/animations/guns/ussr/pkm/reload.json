@@ -1,0 +1,22 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.pkmreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.51,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload", "/scoreboard players set @s pkm 1","v.pkm_ammo = q.scoreboard('pkm');", "@s pkm_reload"],
+                  "5.5": [  "/event entity @s gun:full", "/clear @s addon:pkm_mag 0 1", "/give @s addon:pkm_mag_empty", "/scoreboard players set @s pkm 1","v.pkm_ammo = q.scoreboard('pkm');", "@s pkm_reload" ]
+            }
+        },
+        "animation.pkmreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 6.20831,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s slot.weapon.mainhand 0 addon:pkm","/event entity @s gun:reload2"],
+                  "3.0": [  "/function pkmreload", "/scoreboard players set @s pkm 0","v.pkm_ammo = q.scoreboard('pkm');", "@s pkm_reload"],
+                  "6.2083": [  "/clear @s addon:pkm 0 1", "v.pkm_ammo = q.scoreboard('pkm');", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

@@ -1,0 +1,245 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.ak74m": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo_gl = query.is_item_name_any('slot.inventory', 0, 'addon:vog25') || query.is_item_name_any('slot.inventory', 1, 'addon:vog25') || query.is_item_name_any('slot.inventory', 2, 'addon:vog25') || query.is_item_name_any('slot.inventory', 3, 'addon:vog25') || query.is_item_name_any('slot.inventory', 4, 'addon:vog25') || query.is_item_name_any('slot.inventory', 5, 'addon:vog25') || query.is_item_name_any('slot.inventory', 6, 'addon:vog25') || query.is_item_name_any('slot.inventory', 7, 'addon:vog25') || query.is_item_name_any('slot.inventory', 8, 'addon:vog25') || query.is_item_name_any('slot.inventory', 9, 'addon:vog25') || query.is_item_name_any('slot.inventory', 10, 'addon:vog25') || query.is_item_name_any('slot.inventory', 11, 'addon:vog25') || query.is_item_name_any('slot.inventory', 12, 'addon:vog25') || query.is_item_name_any('slot.inventory', 13, 'addon:vog25') || query.is_item_name_any('slot.inventory', 14, 'addon:vog25') || query.is_item_name_any('slot.inventory', 15, 'addon:vog25') || query.is_item_name_any('slot.inventory', 16, 'addon:vog25') || query.is_item_name_any('slot.inventory', 17, 'addon:vog25') || query.is_item_name_any('slot.inventory', 18, 'addon:vog25') || query.is_item_name_any('slot.inventory', 19, 'addon:vog25') || query.is_item_name_any('slot.inventory', 20, 'addon:vog25') || query.is_item_name_any('slot.inventory', 21, 'addon:vog25') || query.is_item_name_any('slot.inventory', 22, 'addon:vog25') || query.is_item_name_any('slot.inventory', 23, 'addon:vog25') || query.is_item_name_any('slot.inventory', 24, 'addon:vog25') || query.is_item_name_any('slot.inventory', 25, 'addon:vog25') || query.is_item_name_any('slot.inventory', 26, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 0, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 1, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 2, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 3, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 4, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 5, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 6, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 7, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 8, 'addon:vog25');",
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 1, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 2, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 3, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 4, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 5, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 6, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 7, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 8, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 9, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 10, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 11, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 12, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 13, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 14, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 15, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 16, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 17, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 18, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 19, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 20, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 21, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 22, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 23, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 24, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 25, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 26, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 0, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 1, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 2, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 3, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 4, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 5, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 6, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 7, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 8, 'addon:ak74_mag');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 1, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 2, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 3, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 4, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 5, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 6, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 7, 'addon:ak74m') || query.is_item_name_any('slot.hotbar', 8, 'addon:ak74m');",
+              "variable.ammo2_1 = query.is_item_name_any('slot.hotbar', 0, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 1, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 2, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 3, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 4, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 5, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 6, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 7, 'addon:ak74m_gp25') || query.is_item_name_any('slot.hotbar', 8, 'addon:ak74m_gp25');",
+              "variable.ammo2_2 = query.is_item_name_any('slot.hotbar', 0, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 1, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 2, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 3, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 4, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 5, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 6, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 7, 'addon:ak74m_hexagon') || query.is_item_name_any('slot.hotbar', 8, 'addon:ak74m_hexagon');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && !query.equipped_item_any_tag('slot.weapon.mainhand','hexagon') && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && q.is_using_item && query.all_animations_finished"
+                      },
+                      {
+           "shoot_pbs": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','hexagon') && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && q.is_using_item && query.all_animations_finished"
+                       },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:ak74_mag') && q.scoreboard('ak74m') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         },
+                         {
+              "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:ak74_mag') && q.scoreboard('ak74m') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2_1"
+                          },
+                          {
+               "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:ak74_mag') && q.scoreboard('ak74m') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2_2"
+                           }
+                  ]
+              },
+          "shoot": {
+          "animations": ["ak74mfire"],
+          "transitions": [
+              {
+                "unfire": "q.all_animations_finished"
+              }
+                 ]
+              },
+              "shoot_pbs": {
+              "animations": ["ak74mfire_pbs"],
+              "transitions": [
+                  {
+                    "unfire": "q.all_animations_finished"
+                  }
+                     ]
+                  },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["ak74mreload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+          "reload": {
+          "animations": ["ak74mreload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','ak74m')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','ak74m')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      },
+      "controller.animation.ak74m_gp25_pereclucheniye": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+                "variable.ammo_gl = query.is_item_name_any('slot.inventory', 0, 'addon:vog25') || query.is_item_name_any('slot.inventory', 1, 'addon:vog25') || query.is_item_name_any('slot.inventory', 2, 'addon:vog25') || query.is_item_name_any('slot.inventory', 3, 'addon:vog25') || query.is_item_name_any('slot.inventory', 4, 'addon:vog25') || query.is_item_name_any('slot.inventory', 5, 'addon:vog25') || query.is_item_name_any('slot.inventory', 6, 'addon:vog25') || query.is_item_name_any('slot.inventory', 7, 'addon:vog25') || query.is_item_name_any('slot.inventory', 8, 'addon:vog25') || query.is_item_name_any('slot.inventory', 9, 'addon:vog25') || query.is_item_name_any('slot.inventory', 10, 'addon:vog25') || query.is_item_name_any('slot.inventory', 11, 'addon:vog25') || query.is_item_name_any('slot.inventory', 12, 'addon:vog25') || query.is_item_name_any('slot.inventory', 13, 'addon:vog25') || query.is_item_name_any('slot.inventory', 14, 'addon:vog25') || query.is_item_name_any('slot.inventory', 15, 'addon:vog25') || query.is_item_name_any('slot.inventory', 16, 'addon:vog25') || query.is_item_name_any('slot.inventory', 17, 'addon:vog25') || query.is_item_name_any('slot.inventory', 18, 'addon:vog25') || query.is_item_name_any('slot.inventory', 19, 'addon:vog25') || query.is_item_name_any('slot.inventory', 20, 'addon:vog25') || query.is_item_name_any('slot.inventory', 21, 'addon:vog25') || query.is_item_name_any('slot.inventory', 22, 'addon:vog25') || query.is_item_name_any('slot.inventory', 23, 'addon:vog25') || query.is_item_name_any('slot.inventory', 24, 'addon:vog25') || query.is_item_name_any('slot.inventory', 25, 'addon:vog25') || query.is_item_name_any('slot.inventory', 26, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 0, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 1, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 2, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 3, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 4, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 5, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 6, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 7, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 8, 'addon:vog25');"
+            ],
+          "transitions": [
+            {
+ "gl": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && !q.is_riding && variable.attack_time && query.property('ak74m:gp25') == 0"
+             },
+             {
+  "gl2": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && !q.is_riding && variable.attack_time && query.property('ak74m:gp25') == 4"
+              },
+              {
+   "ungl": "!query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && query.property('ak74m:gp25') == 1"
+               },
+               {
+    "ungl2": "!query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && query.property('ak74m:gp25') == 3"
+                },
+              {
+   "ungl": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && variable.attack_time && query.property('ak74m:gp25') == 1"
+               },
+               {
+    "ungl2": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && variable.attack_time && query.property('ak74m:gp25') == 3"
+                },
+                {
+     "ungl": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && q.is_riding && query.property('ak74m:gp25') == 1"
+                 },
+                 {
+      "ungl2": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && q.is_riding && query.property('ak74m:gp25') == 3"
+                  }
+                  ]
+              },
+              "hold_gp": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar GP-25"
+                ]
+              },
+              "hold_gp1": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar GP-25 §cEmpty"
+                ]
+              },
+              "gl": {
+                "animations": ["ak74m_gp25_gl"],
+                "on_entry": [
+                  "/title @s actionbar GP-25 §cEmpty"
+                ],
+              "transitions": [
+                {
+                  "default": "q.all_animations_finished"
+                }
+                     ]
+                  },
+                  "gl2": {
+                    "animations": ["ak74m_gp25_gl2"],
+                    "on_entry": [
+                      "/title @s actionbar GP-25"
+                    ],
+                  "transitions": [
+                    {
+                      "default": "q.all_animations_finished"
+                    }
+                         ]
+                      },
+              "ungl": {
+              "animations": ["ak74m_gp25_ungl"],
+              "on_entry": [
+                "/title @s actionbar Rifle"
+              ],
+              "transitions": [
+                {
+                  "default": "q.all_animations_finished"
+                }
+                     ]
+                  },
+                  "ungl2": {
+                  "animations": ["ak74m_gp25_ungl2"],
+                  "on_entry": [
+                    "/title @s actionbar Rifle"
+                  ],
+                  "transitions": [
+                    {
+                      "default": "q.all_animations_finished"
+                    }
+                         ]
+                      }
+          }
+      },
+      "controller.animation.gp25_ak74m": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo_gl = query.is_item_name_any('slot.inventory', 0, 'addon:vog25') || query.is_item_name_any('slot.inventory', 1, 'addon:vog25') || query.is_item_name_any('slot.inventory', 2, 'addon:vog25') || query.is_item_name_any('slot.inventory', 3, 'addon:vog25') || query.is_item_name_any('slot.inventory', 4, 'addon:vog25') || query.is_item_name_any('slot.inventory', 5, 'addon:vog25') || query.is_item_name_any('slot.inventory', 6, 'addon:vog25') || query.is_item_name_any('slot.inventory', 7, 'addon:vog25') || query.is_item_name_any('slot.inventory', 8, 'addon:vog25') || query.is_item_name_any('slot.inventory', 9, 'addon:vog25') || query.is_item_name_any('slot.inventory', 10, 'addon:vog25') || query.is_item_name_any('slot.inventory', 11, 'addon:vog25') || query.is_item_name_any('slot.inventory', 12, 'addon:vog25') || query.is_item_name_any('slot.inventory', 13, 'addon:vog25') || query.is_item_name_any('slot.inventory', 14, 'addon:vog25') || query.is_item_name_any('slot.inventory', 15, 'addon:vog25') || query.is_item_name_any('slot.inventory', 16, 'addon:vog25') || query.is_item_name_any('slot.inventory', 17, 'addon:vog25') || query.is_item_name_any('slot.inventory', 18, 'addon:vog25') || query.is_item_name_any('slot.inventory', 19, 'addon:vog25') || query.is_item_name_any('slot.inventory', 20, 'addon:vog25') || query.is_item_name_any('slot.inventory', 21, 'addon:vog25') || query.is_item_name_any('slot.inventory', 22, 'addon:vog25') || query.is_item_name_any('slot.inventory', 23, 'addon:vog25') || query.is_item_name_any('slot.inventory', 24, 'addon:vog25') || query.is_item_name_any('slot.inventory', 25, 'addon:vog25') || query.is_item_name_any('slot.inventory', 26, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 0, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 1, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 2, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 3, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 4, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 5, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 6, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 7, 'addon:vog25') || query.is_item_name_any('slot.hotbar', 8, 'addon:vog25');"
+            ],
+          "transitions": [
+            {
+ "reload": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && query.is_using_item && query.property('ak74m:gp25') == 1 && v.ammo_gl"
+             },
+             {
+  "shoot": "query.equipped_item_any_tag('slot.weapon.mainhand','ak74m') && query.equipped_item_any_tag('slot.weapon.mainhand','gp25') && query.is_using_item && query.property('ak74m:gp25') == 3"
+              }
+                  ]
+              },
+              "reload": {
+              "animations": ["gp25_ak74m_reload"],
+              "transitions": [
+                {
+                  "default": "q.all_animations_finished"
+                }
+                     ]
+                  },
+                  "shoot": {
+                    "animations": ["gp25_ak74m"],
+                  "transitions": [
+                    {
+                      "default": "q.all_animations_finished"
+                    }
+                         ]
+                      }
+          }
+      }
+  }
+}

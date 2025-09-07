@@ -1,0 +1,46 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:m4a1_pbs",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.guns2USA",
+        "is_hidden_in_commands": false
+      }
+    },
+    "components": {
+      "minecraft:tags":{
+          "tags":[
+              "gun",
+              "m4a1",
+              "pbs"
+              ]
+              },
+    "minecraft:display_name": {
+        "value": "M4A1 SOPMOD BLOCK I\nsilencer\nUSA"
+        },
+      "minecraft:stacked_by_data": true,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 99999
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 0
+      },
+      "minecraft:icon": {
+        "texture": "m4a1_pbs"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:creative_category": {
+        "parent": "commands"
+      }
+    }
+  }
+}

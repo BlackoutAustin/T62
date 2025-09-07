@@ -1,0 +1,26 @@
+{
+   "format_version": "1.17.20",
+   "minecraft:npc_dialogue": {
+      "scenes": [
+         {
+            "scene_tag": "uaz469_start",
+            "npc_name": "UAZ-469",
+            "text": "",
+            "buttons": [
+               {
+                  "name": "Driver",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:uaz469,r=5,c=1]"
+                  ]
+               },
+               {
+                  "name": "Passenger",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:uaz469_pass,r=5,c=1]"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

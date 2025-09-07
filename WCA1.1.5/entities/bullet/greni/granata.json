@@ -1,0 +1,117 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+            "identifier": "addon:granata",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball",
+            "scripts": {
+                  "animate":[
+                    "particle"
+                  ]
+            },
+            "animations":{
+             "particle": "controller.animation.particle"
+            }
+		},
+		"component_groups": {
+            "rgd5": {
+                    "minecraft:addrider": {
+                            "entity_type": "addon:rgd5_entity"
+                    }
+            },
+            "m67": {
+                    "minecraft:addrider": {
+                            "entity_type": "addon:m67_entity"
+                    }
+            },
+			"entity:despawn": {
+				"minecraft:instant_despawn": {}
+                        }
+	        },
+		"components": {
+		       "minecraft:timer": {
+                               "time": 5,
+                               "looping": false,
+                               "time_down_event": {
+                               "event": "addon:despawning"
+                               }
+                       },
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+					        "damage": [
+					                5,
+					                5
+					],
+					"knockback": true
+				        },
+				        "stick_in_ground": {}
+				},
+			        "power": 3,
+				"gravity": 0.1,
+				"inertia": 1,
+				"liquid_inertia": 0.5,
+				"uncertaintyBase": 1,
+				"uncertaintyMultiplier": 1,
+				"offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"minecraft:type_family": {
+				"family": [ "grenade" ]
+			},
+                        "minecraft:rideable": {
+                                "seat_count": 1,
+								"family_types": [ "grena" ],
+                                "seats": {
+                                        "position": [ 0.0, -0.25, -1 ]
+                                }
+                        },
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+            "rgd5": {
+            "add": {
+                "component_groups": [
+                    "rgd5"
+                ]
+            }
+            },
+            "m67": {
+            "add": {
+                "component_groups": [
+                    "m67"
+                ]
+            }
+            },
+		        "addon:despawning": {
+					"queue_command": {
+						"command": [
+						]
+					}
+		        },
+		        "entity:despawn": {
+			        "add": {
+				        "component_groups": [
+					        "entity:despawn"
+		                        ]
+	                        }
+	                }
+                }
+        }
+}

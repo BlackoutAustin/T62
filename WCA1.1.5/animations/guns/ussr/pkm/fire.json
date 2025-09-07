@@ -1,0 +1,33 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.pkmfire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkm_ammo = q.scoreboard('pkm');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkm", "/playanimation @s animation.pkm_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkm", "/function pkm_hold" ]
+            }
+        },
+        "animation.pkmfire2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkm_ammo = q.scoreboard('pkm');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkm_trasser", "/playanimation @s animation.pkm_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkm", "/function pkm_hold" ]
+            }
+        },
+        "animation.pkmfire_crawl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkm_ammo = q.scoreboard('pkm');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkm", "/playanimation @s animation.pkm_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkm", "/function pkm_hold" ]
+            }
+        },
+        "animation.pkmfire_crawl2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkm_ammo = q.scoreboard('pkm');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkm_trasser", "/playanimation @s animation.pkm_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkm", "/function pkm_hold" ]
+            }
+        }
+    }
+}

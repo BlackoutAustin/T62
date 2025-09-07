@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.particle": {
+            "initial_state": "default",
+            "states": {
+            "default": {
+            "transitions": [
+                       {
+            "particle": " q.is_on_ground"
+                        }
+                    ]
+                },
+            "particle": {
+                  "transitions": [
+                    {
+                      "kill": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+							"/execute as @e[family=grenade,c=1,r=2] run tp @s ^^-1^1",
+                    "/particle minecraft:basic_smoke_particle",
+                    "/particle addon:hit_dim",
+                     "/playsound addon.hit @a[r=10] ^^^0.10 100 1"
+                  ]
+                },
+                "kill": {
+                      "transitions": [
+                        {
+                          "default": "2.0"
+                        }
+                      ],
+                      "on_entry": [
+                        "/kill @s"
+                      ]
+                    }
+            }
+        }
+    }
+}

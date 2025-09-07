@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "addon:medium_svet"
+    },
+    "components": {
+      "minecraft:light_dampening": 0,
+      "minecraft:light_emission": 8,
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": false,
+      "minecraft:geometry": "geometry.pustota",
+      "minecraft:tick": {
+        "looping": true,
+        "interval_range": [5, 5]
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "pusta",
+          "render_method": "alpha_test",
+          "face_dimming": false,
+          "ambient_occlusion": false
+        }
+      },
+      "minecraft:custom_components": ["addon:svet"]
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.gun_system": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+            {
+ "empty": "!query.equipped_item_any_tag('slot.weapon.mainhand','gun')"
+             },
+            {
+ "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('rpg7') != 1 && query.equipped_item_any_tag('slot.weapon.mainhand','rpg7')"
+             },
+             {
+  "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('rpg7') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','rpg7')"
+              },
+                       {
+            "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak74') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74')"
+                        },
+                        {
+             "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak74') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74')"
+                         },
+                         {
+              "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('aks74') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','aks74')"
+                          },
+                          {
+               "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('aks74') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','aks74')"
+                           },
+                           {
+                "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('aks74u') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','aks74u')"
+                            },
+                            {
+                 "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('aks74u') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','aks74u')"
+                             },
+                           {
+                "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('rpk') != 76 && query.equipped_item_any_tag('slot.weapon.mainhand','rpk')"
+                            },
+                            {
+                 "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('rpk') == 76 && query.equipped_item_any_tag('slot.weapon.mainhand','rpk')"
+                             },
+                           {
+                "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('akms') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','akms')"
+                            },
+                            {
+                 "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('akms') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','akms')"
+                             },
+                             {
+                  "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('asval') != 21 && query.equipped_item_any_tag('slot.weapon.mainhand','asval')"
+                              },
+                              {
+                   "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('asval') == 21 && query.equipped_item_any_tag('slot.weapon.mainhand','asval')"
+                             },
+                             {
+                  "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('asvalm') != 21 && query.equipped_item_any_tag('slot.weapon.mainhand','asvalm')"
+                              },
+                              {
+                   "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('asvalm') == 21 && query.equipped_item_any_tag('slot.weapon.mainhand','asvalm')"
+                               },
+                               {
+                    "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('svd') != 11 && query.equipped_item_any_tag('slot.weapon.mainhand','svd')"
+                                },
+                                {
+                     "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('svd') == 11 && query.equipped_item_any_tag('slot.weapon.mainhand','svd')"
+                                 },
+                                 {
+                      "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && q.property('addon:gun') != 4 && q.property('addon:gun') != 5 && query.scoreboard('mosin') != 5 && query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+                                  },
+                                  {
+                       "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && q.property('addon:gun') != 4 && q.property('addon:gun') != 5 && query.scoreboard('mosin') == 5 && query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+                                   },
+                                 {
+                      "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('pkm') != 101 && query.equipped_item_any_tag('slot.weapon.mainhand','pkm')"
+                                  },
+                                  {
+                       "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('pkm') == 101 && query.equipped_item_any_tag('slot.weapon.mainhand','pkm')"
+                                   },
+                                   {
+                        "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak74m') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m')"
+                                    },
+                                    {
+                         "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak74m') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m')"
+                                     },
+                                     {
+                          "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak74m_zenit') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m_zenit')"
+                                      },
+                                      {
+                           "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak74m_zenit') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak74m_zenit')"
+                                       },
+                                       {
+                            "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak12') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak12')"
+                                        },
+                                        {
+                             "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('ak12') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','ak12')"
+                                         },
+                                   {
+                        "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('svds') != 11 && query.equipped_item_any_tag('slot.weapon.mainhand','svds')"
+                                    },
+                                    {
+                         "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('svds') == 11 && query.equipped_item_any_tag('slot.weapon.mainhand','svds')"
+                                     },
+                                   {
+                        "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('pkp') != 101 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp')"
+                                    },
+                                    {
+                         "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('pkp') == 101 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp')"
+                                     },
+                                     {
+                          "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('pkp_zenit') != 101 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit')"
+                                      },
+                                      {
+                           "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('pkp_zenit') == 101 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit')"
+                                       },
+
+                         {
+              "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m16a1') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a1')"
+                          },
+                          {
+               "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m16a1') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a1')"
+                           },
+                           {
+                "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m16a2') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a2')"
+                            },
+                            {
+                 "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m16a2') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a2')"
+                             },
+                           {
+                "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m4a1') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m4a1')"
+                            },
+                            {
+                 "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m4a1') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m4a1')"
+                             },
+                             {
+                  "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m16a4') != 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a4')"
+                              },
+                              {
+                   "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m16a4') == 31 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a4')"
+                               },
+                             {
+                  "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m21') != 21 && query.equipped_item_any_tag('slot.weapon.mainhand','m21')"
+                              },
+                              {
+                   "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m21') == 21 && query.equipped_item_any_tag('slot.weapon.mainhand','m21')"
+                               },
+                               {
+                    "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m110') != 21 && query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                                },
+                                {
+                     "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m110') == 21 && query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                                 },
+                                 {
+                      "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m240b') != 51 && query.equipped_item_any_tag('slot.weapon.mainhand','m240b')"
+                                  },
+                                  {
+                       "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m240b') == 51 && query.equipped_item_any_tag('slot.weapon.mainhand','m240b')"
+                                   },
+                                 {
+                      "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m249') != 101 && query.equipped_item_any_tag('slot.weapon.mainhand','m249')"
+                                  },
+                                  {
+                       "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m249') == 101 && query.equipped_item_any_tag('slot.weapon.mainhand','m249')"
+                                   },
+                                   {
+                        "full": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m249pip') != 101 && query.equipped_item_any_tag('slot.weapon.mainhand','m249pip')"
+                                    },
+                                    {
+                         "empty": "q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && query.scoreboard('m249pip') == 101 && query.equipped_item_any_tag('slot.weapon.mainhand','m249pip')"
+                                     }
+                         
+                  ]
+              },
+              "full": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:full"
+                ]
+              },
+              "empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              }
+          }
+      }
+  }
+}

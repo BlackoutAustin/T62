@@ -1,0 +1,33 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.pkp_zenitfire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkp_zenit", "/playanimation @s animation.pkp_zenit_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkp_zenit", "/function pkp_zenit_hold" ]
+            }
+        },
+        "animation.pkp_zenitfire2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkp_zenit_trasser", "/playanimation @s animation.pkp_zenit_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkp_zenit", "/function pkp_zenit_hold" ]
+            }
+        },
+        "animation.pkp_zenitfire_crawl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkp_zenit_crawl", "/playanimation @s animation.pkp_zenit_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkp_zenit", "/function pkp_zenit_hold" ]
+            }
+        },
+        "animation.pkp_zenitfire_crawl2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 7.62x54_bullet_pkp_zenit_crawl_trasser", "/playanimation @s animation.pkp_zenit_shoot", "/playsound addon.pkm @a ^^^0.10 200 1", "/function pkp_zenit", "/function pkp_zenit_hold" ]
+            }
+        }
+    }
+}

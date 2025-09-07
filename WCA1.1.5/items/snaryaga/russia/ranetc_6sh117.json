@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.50",
+   "minecraft:item": {
+	"description": {
+	 "identifier": "addon:ranetc_6sh117",
+	 "menu_category": {
+	   "category": "equipment",
+	   "group": "itemGroup.name.armorzzzzbagpacks",
+	   "is_hidden_in_commands": false
+	 }
+	  },
+	  "components": {
+		  "minecraft:display_name": {
+		  "value": "ZhTM 6Sh117 Backpack\nRussia"
+		  },
+		"minecraft:max_stack_size": 1,
+		"minecraft:damageable": {
+		  "max_damage": 0,
+		  "damage_chance": {
+			"min": 60,
+			"max": 100
+		  }
+		},
+		"minecraft:damage": 0,
+		"minecraft:wearable": {
+		  "slot": "slot.armor.feet"
+		},
+		"minecraft:knockback_resistance": {
+		  "protection": 1
+		},
+			   "minecraft:icon": {
+				  "texture": "ranetc_6sh117"
+			  }
+	  }
+	}
+  }

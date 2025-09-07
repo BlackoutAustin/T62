@@ -1,0 +1,141 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.bmp3": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+            {
+            "riding": "query.is_riding"
+             }
+                  ]
+              },
+              "riding": {
+                "transitions": [
+                      {
+                        "unriding": "!query.is_riding"
+                      }
+                ],
+                "on_entry": [
+                  "/execute if entity @e[type=addon:bmp3,r=1.5] run tag @s add bmp3",
+                  "/execute if entity @e[type=addon:bmp3,r=1.5] run event entity @s bmp3",
+                  "/execute if entity @e[type=addon:bmp3,r=1.5] run give @s addon:mm30 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
+                  "/execute if entity @e[type=addon:bmp3,r=1.5] run give @s addon:mm100 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}"
+                ]
+              },
+              "unriding": {
+                "transitions": [
+                      {
+                        "default": "1.0"
+                      }
+                ],
+                "on_entry": [
+                  "/event entity @s unbmp3",
+                  "/replaceitem entity @s[hasitem={item=addon:bmp3_h,location=slot.armor.head}] slot.armor.head 0 minecraft:air",
+                  "/tag @s remove bmp3",
+                  "/clear @s addon:mm30",
+                  "/clear @s addon:mm100"
+                ]
+              }
+          }
+      },
+      "controller.animation.bmp3_2": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+            {
+            "riding": "query.is_riding && q.property('vehicle:bmp3') == 1"
+             }
+                  ]
+              },
+              "riding": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/replaceitem entity @s slot.armor.head 0 addon:bmp3_h 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_slot\" }}",
+                  "/effect @s slowness 1 5 true"
+                ]
+              },
+              "unriding": {
+                "transitions": [
+                      {
+                        "default": "1.0"
+                      }
+                ],
+                "on_entry": [
+                  "/tag @s remove bmp3",
+                  "/clear @s addon:mm30",
+                  "/clear @s addon:mm100"
+                ]
+              }
+          }
+      },
+      "controller.animation.bmp3_2a70": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+            {
+            "2a70_fire": "query.equipped_item_any_tag('slot.weapon.mainhand','100mm') && query.is_using_item"
+             }
+                  ]
+              },
+              "2a70_fire": {
+              "animations": ["2a70_fire"],
+              "transitions": [
+                  {
+                    "default": "q.all_animations_finished"
+                  }
+                     ]
+                  }
+          }
+      },
+      "controller.animation.bmp3_2a72": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+            {
+            "2a72_fire": "query.equipped_item_any_tag('slot.weapon.mainhand','30mm') && query.is_using_item"
+             }
+                  ]
+              },
+              "2a72_fire": {
+              "animations": ["2a72_fire"],
+              "transitions": [
+                  {
+                    "default": "q.all_animations_finished"
+                  }
+                     ]
+                  }
+          }
+      },
+        "controller.animation.testi2": {
+            "initial_state": "default",
+            "states": {
+            "default": {
+            "transitions": [
+                       {
+            "particle": "query.property('gun:fire') == 1"
+                        }
+                    ]
+                },
+            "particle": {
+                  "transitions": [
+                        {
+                          "default": "1.0"
+                        }
+                  ],
+                  "on_entry": [
+                    "/say pipiska"
+                  ]
+                }
+            }
+        }
+    }
+}

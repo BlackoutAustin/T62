@@ -1,0 +1,20 @@
+give @s[scores={m21=20}] addon:m21_mag_empty
+give @s[scores={m21=19}] addon:m21_mag_empty 1 19
+give @s[scores={m21=18}] addon:m21_mag_empty 1 18
+give @s[scores={m21=17}] addon:m21_mag_empty 1 17
+give @s[scores={m21=16}] addon:m21_mag_empty 1 16
+give @s[scores={m21=15}] addon:m21_mag_empty 1 15
+give @s[scores={m21=14}] addon:m21_mag_empty 1 14
+give @s[scores={m21=13}] addon:m21_mag_empty 1 13
+give @s[scores={m21=12}] addon:m21_mag_empty 1 12
+give @s[scores={m21=11}] addon:m21_mag_empty 1 11
+give @s[scores={m21=10}] addon:m21_mag_empty 1 10
+give @s[scores={m21=9}] addon:m21_mag_empty 1 9
+give @s[scores={m21=8}] addon:m21_mag_empty 1 8
+give @s[scores={m21=7}] addon:m21_mag_empty 1 7
+give @s[scores={m21=6}] addon:m21_mag_empty 1 6
+give @s[scores={m21=5}] addon:m21_mag_empty 1 5
+give @s[scores={m21=4}] addon:m21_mag_empty 1 4
+give @s[scores={m21=3}] addon:m21_mag_empty 1 3
+give @s[scores={m21=2}] addon:m21_mag_empty 1 2
+give @s[scores={m21=1}] addon:m21_mag_empty 1 1

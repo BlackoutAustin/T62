@@ -1,0 +1,77 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.aks74fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 5.45x39_bullet", "/playanimation @s animation.ak74_shoot", "/playsound addon.ak74 @a ^^^0.10 200 1", "/function aks74", "/function aks74_hold" ]
+            }
+        },
+        "animation.aks74fire_pbs": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/camerashake add @s 0.1 0.1 rotational", "@s 5.45x39_bullet", "/playanimation @s animation.ak74_shoot", "/playsound addon.ak74_pbs @a ^^^0.10 200 1", "/function aks74", "/function aks74_hold" ]
+            }
+        },
+        "animation.gp25_aks74": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s vog25_bullet",
+                    "/playsound addon.gp25 @a ^^^0.10 200 1",
+                    "/playanimation @s animation.gp25_aks74_shoot",
+                    "/function svet",
+                    "/tp @s ^^^ ~~-3"
+                ],
+                "0.1": [
+                    "/fill ^10^10^10 ^-10^-6^-10 air replace light_block"
+                ],
+                "0.5": [
+                    "/title @s actionbar GP-25 §cEmpty",
+                    "@s aks74_gp25_gl"
+                ]
+            }
+        },
+        "animation.aks74_gp25_gl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s aks74_gp25_gl"
+                ]
+            }
+        },
+        "animation.aks74_gp25_ungl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s aks74_gp25_ungl",
+                    "/title @s actionbar Rifle"
+                ]
+            }
+        },
+        "animation.aks74_gp25_gl2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s aks74_gp25_gl2"
+                ]
+            }
+        },
+        "animation.aks74_gp25_ungl2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s aks74_gp25_ungl2",
+                    "/title @s actionbar Rifle"
+                ]
+            }
+        }
+    }
+}

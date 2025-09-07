@@ -1,0 +1,29 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.ak12reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.251,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "3.25": [  "/event entity @s gun:full", "/clear @s addon:ak74_mag 0 1", "/give @s addon:ak74_mag_empty", "/scoreboard players set @s ak12 1" ]
+            }
+        },
+        "animation.ak12reload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.8751,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s[hasitem={item=addon:ak12}] slot.weapon.mainhand 0 addon:ak12", "/replaceitem entity @s[hasitem={item=addon:ak12_gp25}] slot.weapon.mainhand 0 addon:ak12_gp25","/replaceitem entity @s[hasitem={item=addon:ak12_1p87}] slot.weapon.mainhand 0 addon:ak12_1p87", "/replaceitem entity @s[hasitem={item=addon:ak12_eotech}] slot.weapon.mainhand 0 addon:ak12_eotech", "/replaceitem entity @s[hasitem={item=addon:ak12_1p87_gp25}] slot.weapon.mainhand 0 addon:ak12_1p87_gp25", "/replaceitem entity @s[hasitem={item=addon:ak12_eotech_gp25}] slot.weapon.mainhand 0 addon:ak12_eotech_gp25","/event entity @s gun:reload2"],
+                  "1.875": [ "/clear @s addon:ak12 0 1", "/clear @s addon:ak12_gp25 0 1", "/clear @s addon:ak12_1p87 0 1", "/clear @s addon:ak12_eotech 0 1", "/clear @s addon:ak12_1p87_gp25 0 1", "/clear @s addon:ak12_eotech_gp25 0 1","/function ak12reload", "/scoreboard players set @s ak12 0", "/event entity @s gun:full" ]
+            }
+        },
+        "animation.gp25_ak12_reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.54171,
+            "timeline": {
+                  "0.0": [ "@s ak12_gp25_gl_reload"],
+                  "1.54169": [  "@s ak12_gp25_gl2","/clear @s addon:vog25 0 1" ]
+            }
+        }
+    }
+}

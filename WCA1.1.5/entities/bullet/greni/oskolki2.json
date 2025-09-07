@@ -1,0 +1,92 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "addon:oskolok2",
+            "runtime_identifier": "minecraft:snowball",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "scripts": {
+                  "animate":[
+                    "particle"
+                  ]
+            },
+            "animations":{
+             "particle": "controller.animation.particle"
+            }
+        },
+        "components": {
+            "minecraft:timer": {
+                "time": [
+                    1,
+                    1
+                ],
+                "looping": false,
+                "time_down_event": {
+                    "event": "minecraft:explode",
+                    "target": "self"
+                }
+            },
+			 "minecraft:type_family": {
+        "family": [ "bullet" ]
+      },
+            "minecraft:collision_box": {
+                "width": 0.01,
+                "height": 0.01
+            },
+            "minecraft:break_blocks": {
+                "breakable_blocks": [
+                "glass",
+                "glass_pane",
+                "stained_glass",
+                "stained_glass_pane"
+                ]
+            },
+                "minecraft:projectile": {
+                    "on_hit": {
+                        "impact_damage": {
+                            "damage": [
+                                250,
+                                    1100
+                            ],
+                            "knockback": true,
+                            "destroy_on_hit": true
+                        },
+                        "stick_in_ground": {
+                            "shake_time": 2
+                        },
+                        "definition_event": {
+                            "affectProjectile": true,
+                            "eventTrigger": {
+                                "event": "krovotek",
+                                "target": "self"
+                            }
+                        }
+                    },
+                    "power": -3,
+                    "gravity": 0.001,
+                    "inertia": 1,
+                    "uncertaintyBase": 90,
+                    "anchor": 1,
+                    "offset": [
+                        0,
+                        0.25,
+                        0
+                    ],
+                    "reflectOnHurt": false,
+                    "catch_fire": false
+                },
+            "minecraft:physics": {}
+        },
+        "events": {
+            "minecraft:explode": {
+                "queue_command": {
+                    "command": [
+                        "kill @s"
+                    ]
+                }
+            }
+        }
+    }
+}

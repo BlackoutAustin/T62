@@ -1,0 +1,78 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.rpg7": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','rpg7') && q.is_using_item && query.all_animations_finished"
+                      },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','rpg7') && q.is_using_item && query.all_animations_finished && query.is_item_name_any('slot.weapon.offhand', 0, 'addon:pg7vl_item')"
+                        }
+                  ]
+              },
+              "shoot": {
+              "transitions": [
+                  {
+                    "unfire": "1.0"
+                  }
+                     ],
+                    "on_entry": [
+                      "/function svet",
+                      "/camerashake add @s 0.2 0.1 rotational",
+                      "@s pg7vl_bullet",
+                      "/playanimation @s animation.rpg7_shoot",
+                      "/playsound addon.rpg7 @a ^^^0.10 200 1",
+                      "/replaceitem entity @s slot.weapon.mainhand 0 addon:rpg7_empty",
+                      "/scoreboard objectives add rpg7 dummy",
+                      "/scoreboard players add @s rpg7 1",
+                      "/execute at @s[scores={rpg7=1..5000000}] run event entity @s gun:empty"
+                    ]
+                  },
+                  "unfire": {
+                    "transitions": [
+                      {
+                        "default": "1.0"
+                      }
+                    ],
+                    "on_entry": [
+                      "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                      "@s unfire"
+                    ]
+                  },
+          "reload": {
+            "on_entry": [
+              "variable.ammo_rpg = query.is_item_name_any('slot.inventory', 0, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 1, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 2, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 3, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 4, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 5, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 6, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 7, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 8, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 9, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 10, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 11, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 12, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 13, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 14, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 15, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 16, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 17, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 18, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 19, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 20, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 21, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 22, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 23, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 24, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 25, 'addon:pg7vl_item') || query.is_item_name_any('slot.inventory', 26, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 0, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 1, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 2, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 3, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 4, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 5, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 6, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 7, 'addon:pg7vl_item') || query.is_item_name_any('slot.hotbar', 8, 'addon:pg7vl_item');"
+            ],
+          "animations": ["rpg7reload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','rpg7')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','rpg7')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              }
+          }
+      }
+  }
+}

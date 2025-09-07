@@ -1,0 +1,138 @@
+{
+  "format_version": "1.19.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:uaz469_kapsula",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+        ]
+      },
+      "animations": {
+      }
+    },
+	  "component_groups": {
+    },
+    "components": {
+      "minecraft:health": {
+        "value": 1000,
+        "max": 1000
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [{
+          "cause": "fall",
+          "deals_damage": false
+        },
+        {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "operator": "==",
+                    "value": "bullet"
+                  }
+                ]
+              },
+              "deals_damage": true
+            },
+            "cause": "projectile",
+            "damage_multiplier": 0.1
+          }]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "UAZ-469",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  }
+                ]
+              },
+              "event": "addon:idi_nahuy",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:rideable": {
+        "seat_count": 3,
+        "interact_text": "Drive",
+        "seats": [
+          {
+            "position": [-0.5, 0.7, 0.75]
+           },
+           {
+             "position": [0.45, 0.7, -0.4]
+            },
+            {
+              "position": [-0.45, 0.7, -0.4]
+             }
+        ]
+
+      },
+      "minecraft:type_family": {
+        "family": [ "vehicle","vehicle_immunity","uaz469" ]
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true,
+        "totalSupply": 0,
+        "suffocateTime": 0
+      },
+  "minecraft:scale": {
+        "value": 1.0
+      },
+      "minecraft:collision_box": {
+        "width": 3.1,
+        "height": 2.6
+},
+        "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:input_ground_controlled": {
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:on_death": {
+        "event": "death",
+        "target": "self"
+      }
+    },
+    "events": {
+      "addon:idi_nahuy": {
+				"queue_command": {
+					"command": [
+         "dialogue open @p[r=4,tag=!riding] @p[r=4,tag=!riding] uaz469_start"
+          ]
+        }
+      },
+      "death": {
+				"queue_command": {
+					"command": [
+            "particle addon:vehicle_babah_dim ~ ~ ~",
+            "particle addon:vehicle_babah_dim2 ~ ~ ~",
+            "particle addon:babah_vehicle ~ ~ ~",
+            "event entity @e[type=addon:uaz469,c=1] death",
+         "kill @e[family=uaz469,r=5,type=!addon:uaz469]"
+         
+          ]
+        },
+        "add": {
+          "component_groups": [
+          "death"
+          ]
+        }
+      }
+    }
+  }
+}

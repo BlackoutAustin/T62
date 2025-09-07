@@ -1,0 +1,70 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m16a1fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 5.45x39_bullet", "/playanimation @s animation.m16_shoot", "/playsound addon.m16 @a ^^^0.10 200 1", "/function m16a1", "/function m16a1_hold" ]
+            }
+        },
+        "animation.m203_m16a1": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s m406_bullet",
+                    "/playsound addon.m203 @a ^^^0.10 200 1",
+                    "/playanimation @s animation.m203_m16_shoot",
+                    "/function svet",
+                    "/tp @s ^^^ ~~-3"
+                ],
+                "0.1": [
+                    "/fill ^10^10^10 ^-10^-6^-10 air replace light_block"
+                ],
+                "0.5": [
+                    "/title @s actionbar M203 §cEmpty",
+                    "@s m16a1_m203_gl"
+                ]
+            }
+        },
+        "animation.m16a1_m203_gl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s m16a1_m203_gl"
+                ]
+            }
+        },
+        "animation.m16a1_m203_ungl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s m16a1_m203_ungl",
+                    "/title @s actionbar Rifle"
+                ]
+            }
+        },
+        "animation.m16a1_m203_gl2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s m16a1_m203_gl2"
+                ]
+            }
+        },
+        "animation.m16a1_m203_ungl2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1,
+            "timeline": {
+                "0.0": [
+                    "@s m16a1_m203_ungl2",
+                    "/title @s actionbar Rifle"
+                ]
+            }
+        }
+    }
+}

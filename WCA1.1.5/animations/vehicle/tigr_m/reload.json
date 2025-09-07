@@ -1,0 +1,13 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.tigr_m_kord_reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.01,
+            "timeline": {
+                "0.0": "/effect @e[type=addon:tigr_m_turret,c=1] invisibility 0 1 true",
+                  "5": [  "/event entity @s tigr_m_reload_finish", "/scoreboard players set @s tigr_m_kord 0", "/clear @p addon:tigr_m_kord_mag" ]
+            }
+        }
+    }
+}

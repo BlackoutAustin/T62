@@ -1,0 +1,19 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.rpg7fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/function svet","/camerashake add @s 0.2 0.1 rotational", "@s pg7vl_bullet", "/playanimation @s animation.rpg7_shoot", "/playsound addon.rpg7 @a ^^^0.10 200 1", "/replaceitem entity @s slot.weapon.mainhand 0 addon:rpg7_empty" ]
+            }
+        },
+        "animation.rpoafire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/function svet","/camerashake add @s 0.2 0.1 rotational", "@s rpoa_bullet", "/playanimation @s animation.rpg7_shoot", "/playsound addon.rpg7 @a ^^^0.10 200 1", "/replaceitem entity @s slot.weapon.mainhand 0 addon:rpoa_empty" ]
+            }
+        }
+    }
+}

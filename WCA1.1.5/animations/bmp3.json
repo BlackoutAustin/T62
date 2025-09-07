@@ -1,0 +1,21 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.2a72_fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.2,
+            "timeline": {
+                    "0.0": ["/event entity @e 2a72_fire", "/playsound addon.2a72 @a ^^^0.10 200 1 " ],
+                "0.2": [ "/event entity @e 2a72_unfire" ]
+            }
+        },
+        "animation.2a70_fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3,
+            "timeline": {
+                    "0.0": [ "/event entity @e 2a70_fire", "/playsound addon.2a70 @a ^^^0.10 200 1 " ],
+                "3": [ "/event entity @e 2a70_unfire" ]
+            }
+        }
+    }
+}

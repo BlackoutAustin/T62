@@ -1,0 +1,12 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.rpkfire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/camerashake add @s 0.1 0.1 rotational", "@s 9x39_bullet", "/playanimation @s animation.rpk_shoot", "/playsound addon.akm @a ^^^0.10 200 1", "/function rpk", "/function svet", "/function rpk_hold" ]
+            }
+        }
+    }
+}

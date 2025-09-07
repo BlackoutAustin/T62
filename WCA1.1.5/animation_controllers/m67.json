@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.m67": {
+          "initial_state": "setup",
+          "states": {
+            "setup": {
+              "transitions": [
+                {
+                  "m67_use": "q.is_using_item && query.equipped_item_any_tag('slot.weapon.mainhand','m67')"
+                }]
+            },
+            "m67_use": {
+              "animations": [
+                  "m67_use"
+              ],
+              "transitions": [
+                {
+                  "setup": "!q.is_using_item && !q.any_animation_finished && query.equipped_item_any_tag('slot.weapon.mainhand','m67')"
+                },
+                {
+                  "m67_unuse": "!q.is_using_item && q.any_animation_finished && query.equipped_item_any_tag('slot.weapon.mainhand','m67')"
+                }
+              ]
+            },
+            "m67_unuse": {
+              "animations": [
+                  "m67_unuse"
+              ],
+              "transitions": [
+                {
+                  "setup": "q.any_animation_finished"
+                }
+              ]
+            }
+          }
+        }
+  }
+}

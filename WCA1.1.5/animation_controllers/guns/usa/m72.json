@@ -1,0 +1,62 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.m72": {
+            "initial_state": "default",
+            "states": {
+            "default": {
+            "transitions": [
+                       {
+            "shoot": "query.equipped_item_any_tag('slot.weapon.mainhand','m72') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty2') && q.is_using_item && query.all_animations_finished"
+                        },
+                           {
+                "hold": "query.equipped_item_any_tag('slot.weapon.mainhand','m72') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty')"
+                            },
+                           {
+                "hold_empty": "query.equipped_item_any_tag('slot.weapon.mainhand','m72') && query.equipped_item_any_tag('slot.weapon.mainhand','empty')"
+                            }
+                    ]
+                },
+            "shoot": {
+            "animations": ["m72fire"],
+            "transitions": [
+                {
+                  "unfire": "q.all_animations_finished"
+                }
+                   ]
+                },
+                "unfire": {
+                  "transitions": [
+                    {
+                      "default": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+                    "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                    "@s unfire"
+                  ]
+                },
+                "hold": {
+                  "transitions": [
+                    {
+                      "default": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+                    "/function m72_hold"
+                  ]
+                },
+                "hold_empty": {
+                  "transitions": [
+                    {
+                      "default": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+                    "/title @s actionbar §cEmpty"
+                  ]
+                }
+            }
+        }
+    }
+}

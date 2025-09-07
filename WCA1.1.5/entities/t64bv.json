@@ -1,0 +1,208 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "component_groups": {
+      "maingun:ready": {
+        "minecraft:variant": { "value": 0 }
+      },
+      "maingun:shoot_start": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": 6,
+          "time_down_event": {
+            "event": "maingun:shoot_end",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": { "value": 1 }
+      },
+      "minecraft:is_dead": {
+        "minecraft:transformation": {
+          "into": "ussr:t64bv_dead"
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.controlled_by_player": {},
+      "minecraft:break_blocks": {
+        "breakable_blocks": [
+          "bamboo", "cactus", "minecraft:leaves", "turtle_egg", "waterlily",
+          "minecraft:planks", "minecraft:log", "minecraft:hay_block",
+          "minecraft:wheat", "minecraft:potatoes", "minecraft:carrots",
+          "minecraft:beetroot", "minecraft:melon_block", "minecraft:pumpkin",
+          "minecraft:sweet_berry_bush", "minecraft:cake", "minecraft:brown_mushroom",
+          "minecraft:red_mushroom", "minecraft:fence", "minecraft:wooden_door",
+          "minecraft:glass", "minecraft:glass_pane", "minecraft:stained_glass",
+          "minecraft:stained_glass_pane", "minecraft:wooden_slab"
+        ]
+      },
+      "minecraft:can_climb": {},
+      "minecraft:collision_box": {
+        "height": 8,
+        "width": 4
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "contact",
+            "deals_damage": true
+          },
+          {
+            "deals_damage": true
+          }
+        ]
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:healable": {
+        "items": [
+          {
+            "heal_amount": 20,
+            "item": "iron_ingot"
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": {
+          "range_max": 10000000,
+          "range_min": 10000000
+        }
+      },
+      "minecraft:input_ground_controlled": {},
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "cooldown": 6,
+            "interact_text": "Shoot Maingun",
+            "on_interact": {
+              "event": "maingun:shoot_start",
+              "filters": {
+                "all_of": [
+                  {
+                    "domain": "hand",
+                    "operator": "equals",
+                    "subject": "player",
+                    "test": "has_equipment",
+                    "value": "flint_and_steel"
+                  },
+                  {
+                    "subject": "other",
+                    "test": "is_riding",
+                    "value": true
+                  },
+                  {
+                    "operator": "equals",
+                    "subject": "self",
+                    "test": "is_variant",
+                    "value": 0
+                  }
+                ]
+              },
+              "target": "self"
+            },
+            "spawn_entities": "ussr:t64bv_shell"
+          }
+        ]
+      },
+      "minecraft:is_stackable": {},
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:nameable": {},
+      "minecraft:navigation.walk": {
+        "can_float": false
+      },
+      "minecraft:on_death": {
+        "event": "minecraft:dead",
+        "target": "self"
+      },
+      "minecraft:physics": {},
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:rideable": {
+        "crouching_skip_interact": true,
+        "family_types": ["player"],
+        "interact_text": "Into turret",
+        "rider_can_interact": true,
+        "seat_count": 1,
+        "seats": [
+          { "position": [0.6, 1.9, -1] }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 0.9
+      },
+      "minecraft:type_family": {
+        "family": ["entity", "ussr", "ussrtank", "t64bv", "tank"]
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.02
+      }
+    },
+    "description": {
+      "animations": {
+        "engine": "animation.tank_engine",
+        "firing": "controller.animation.t64bv_shoot",
+        "glow": "controller.animation.tank_shoot_glow",
+        "smoking": "controller.animation.tank",
+        "tank": "controller.animation.tank_speed"
+      },
+      "identifier": "ussr:t64bv",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "firing",
+          { "engine": "q.has_rider" },
+          "glow",
+          "tank",
+          "smoking"
+        ]
+      }
+    },
+    "events": {
+      "maingun:shoot_end": {
+        "add": {
+          "component_groups": ["maingun:ready"]
+        },
+        "remove": {
+          "component_groups": ["maingun:shoot_start"]
+        }
+      },
+      "maingun:shoot_start": {
+        "add": {
+          "component_groups": ["maingun:shoot_start"]
+        },
+        "remove": {
+          "component_groups": ["maingun:shoot_end"]
+        }
+      },
+      "minecraft:dead": {
+        "add": {
+          "component_groups": ["minecraft:is_dead"]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["maingun:ready", "machinegun:ready"]
+        },
+        "remove": {
+          "component_groups": ["maingun:shoot_start", "machinegun:shoot_start"]
+        }
+      }
+    }
+  }
+}

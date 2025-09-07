@@ -1,0 +1,32 @@
+{
+   "format_version": "1.17.20",
+   "minecraft:npc_dialogue": {
+      "scenes": [
+         {
+            "scene_tag": "m1151_start",
+            "npc_name": "M1151",
+            "text": "Гойда, брат!",
+            "buttons": [
+               {
+                  "name": "Driver",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:m1151,r=5,c=1]"
+                  ]
+               },
+               {
+                  "name": "Machinegunner",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:m1151_turret,r=5,c=1]"
+                  ]
+               },
+               {
+                  "name": "Passenger",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:m1151_pass,r=5,c=1]"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

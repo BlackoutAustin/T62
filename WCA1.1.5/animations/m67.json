@@ -1,0 +1,19 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m67_use": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.25,
+            "timeline": {
+            }
+        },
+        "animation.m67_unuse": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.251,
+            "timeline": {
+                "0.1667": "/event entity @s m67",
+                  "1.2501":  "/clear @s addon:m67 0 1"
+            }
+        }
+    }
+}

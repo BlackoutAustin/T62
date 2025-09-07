@@ -1,0 +1,36 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:povyazka_green",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.armorzzzzzzzzzzzzpovyazki",
+        "is_hidden_in_commands": false
+      }
+    },
+    "components": {
+      "minecraft:allow_off_hand": true,
+      "minecraft:tags":{
+          "tags":[
+              "povyazka",
+              "green"
+              ]
+              },
+    "minecraft:display_name": {
+        "value": "Green armband"
+        },
+      "minecraft:stacked_by_data": true,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 0
+      },
+      "minecraft:icon": {
+        "texture": "povyazka_green"
+      },
+      "minecraft:can_destroy_in_creative": false
+    }
+  }
+}

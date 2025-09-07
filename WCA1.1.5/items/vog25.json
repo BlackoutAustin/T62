@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:vog25",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.gunammogr",
+        "is_hidden_in_commands": false
+      }
+    },
+    "components": {
+      "minecraft:tags":{
+          "tags":[
+              "vog25"
+              ]
+              },
+    "minecraft:display_name": {
+        "value": "VOG-25\nGP-25\nHE grenade"
+        },
+      "minecraft:stacked_by_data": true,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 6,
+      "minecraft:use_duration": 999999,
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 0
+      },
+      "minecraft:icon": {
+        "texture": "vog25"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:creative_category": {
+        "parent": "equipment"
+      }
+    }
+  }
+}

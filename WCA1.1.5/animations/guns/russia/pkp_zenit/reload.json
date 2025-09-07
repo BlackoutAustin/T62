@@ -1,0 +1,22 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.pkp_zenitreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.51,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload", "/scoreboard players set @s pkp_zenit 1","v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "@s pkp_zenit_reload"],
+                  "5.5": [  "/event entity @s gun:full", "/clear @s addon:pkm_mag 0 1", "/give @s addon:pkm_mag_empty", "/scoreboard players set @s pkp_zenit 1","v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "@s pkp_zenit_reload" ]
+            }
+        },
+        "animation.pkp_zenitreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 6.20831,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s slot.weapon.mainhand 0 addon:pkp_zenit","/event entity @s gun:reload2"],
+                  "3.0": [  "/function pkp_zenitreload", "/scoreboard players set @s pkp_zenit 0","v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "@s pkp_zenit_reload"],
+                  "6.2083": [  "/clear @s addon:pkp_zenit 0 1", "v.pkp_zenit_ammo = q.scoreboard('pkp_zenit');", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

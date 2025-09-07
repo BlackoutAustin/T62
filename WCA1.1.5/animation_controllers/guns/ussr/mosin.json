@@ -1,0 +1,133 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.mosin": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 1, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 2, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 3, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 4, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 5, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 6, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 7, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 8, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 9, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 10, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 11, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 12, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 13, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 14, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 15, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 16, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 17, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 18, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 19, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 20, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 21, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 22, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 23, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 24, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 25, 'addon:ammo7.62x54') || query.is_item_name_any('slot.inventory', 26, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 0, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 1, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 2, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 3, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 4, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 5, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 6, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 7, 'addon:ammo7.62x54') || query.is_item_name_any('slot.hotbar', 8, 'addon:ammo7.62x54');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 1, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 2, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 3, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 4, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 5, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 6, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 7, 'addon:mosin') || query.is_item_name_any('slot.hotbar', 8, 'addon:mosin');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && q.property('addon:gun') != 4 && q.property('addon:gun') != 5 && q.scoreboard('mosin') != 4  && query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.is_using_item && query.all_animations_finished"
+                      },
+                      {
+           "shoot2": "q.property('addon:gun') == 0 && q.property('addon:gun') != 4 && q.property('addon:gun') != 5 && q.scoreboard('mosin') == 4  && query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.is_using_item && query.all_animations_finished"
+                       },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "zatvor": "q.property('addon:gun') == 4 && query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.is_using_item && query.all_animations_finished"
+                        },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload_anim": "q.property('addon:gun') == 2 && query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+                         },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:ammo7.62x54') && q.scoreboard('mosin') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         }
+                  ]
+              },
+              "shoot": {
+              "animations": ["mosinfire"],
+              "transitions": [
+                  {
+                    "unfire": "q.all_animations_finished"
+                  }
+                     ]
+                  },
+                  "shoot2": {
+                  "animations": ["mosinfire2"],
+                  "transitions": [
+                      {
+                        "unfire": "q.all_animations_finished"
+                      }
+                         ]
+                      },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["mosinreload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+                  "zatvor": {
+                  "animations": ["mosinzatvor"],
+                  "transitions": [
+                            {
+                  "default":"q.all_animations_finished"
+                  },
+                  {
+                  "default":"q.property('addon:gun') != 5"
+                  }
+                         ]
+                      },
+                      "reload": {
+                        "transitions": [
+                          {
+               "reload_anim": "q.property('addon:gun') == 2"
+                           },
+                          
+                          {
+                            "default": "1.0"
+                          }
+                        ],
+                        "on_entry": [
+                          "/event entity @s[hasitem={item=addon:ammo7.62x54,quantity=5..}] gun:reload"
+                        ]
+                      },
+          "reload_anim": {
+          "animations": ["mosinreload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      }
+  }
+}

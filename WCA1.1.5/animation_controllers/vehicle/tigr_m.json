@@ -1,0 +1,231 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.tigr_m_player": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "start": "q.is_riding && query.is_item_name_any('slot.weapon.mainhand',0,'addon:tigr_m_kord_fire')"
+                        }
+                    ]
+                },
+                "start": {
+                    "on_entry": [
+                        "/effect @e[type=addon:tigr_m_turret,c=1] invisibility 1 1"
+                    ],
+                    "transitions": [ 
+                        {
+                          "default": "1.0"
+                        },
+                        {
+                            "stop": "q.is_riding && !query.is_item_name_any('slot.weapon.mainhand',0,'addon:tigr_m_kord_fire')"
+                        }
+                     ]
+                },
+                "stop": {
+                    "on_entry": [
+                        "/effect @e[type=addon:tigr_m_turret,c=1] invisibility 0 1 true"
+                    ],
+                    "transitions": [ 
+                        {
+                          "default": "1.0"
+                        }
+                     ]
+                }
+            }
+        },
+        "controller.animation.tigr_m_player_2": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+             "shoot": "query.is_item_name_any('slot.weapon.mainhand',0,'addon:tigr_m_kord_fire') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && q.is_using_item && query.all_animations_finished && query.head_x_rotation(0) <= 22.5"
+                         },
+                         {
+              "reload": "query.is_item_name_any('slot.weapon.mainhand',0,'addon:tigr_m_kord_mag') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && q.is_using_item && query.all_animations_finished"
+                          }
+                    ]
+                },
+                "shoot": {
+                "animations": ["tigr_m_kord_fire"],
+                "transitions": [
+                    {
+                      "unfire": "q.all_animations_finished"
+                    }
+                       ]
+                    },
+                    "unfire": {
+                      "transitions": [
+                        {
+                          "default": "1.0"
+                        }
+                      ],
+                      "on_entry": [
+                        "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                        "@s unfire"
+                      ]
+                    },
+                    "reload": {
+                      "transitions": [
+                        {
+                          "default": "1.0"
+                        }
+                      ],
+                      "on_entry": [
+                        "/event entity @e[type=addon:tigr_m_turret,c=1,r=2] tigr_m_reload"
+                      ]
+                    }
+            }
+        },
+        "controller.animation.tigr_m_turret": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "start": "q.has_player_rider && q.scoreboard('tigr_m_kord') != 50"
+                        },
+                        {
+                            "start_empty": "q.has_player_rider && q.scoreboard('tigr_m_kord') == 50"
+                        }
+                    ]
+                },
+                "start": {
+                    "on_entry": [
+                        "/give @p[c=1] addon:tigr_m_kord_fire 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}"
+                    ],
+                    "transitions": [
+                        {
+                          "default": "!q.has_player_rider"
+                        },
+                        {
+                            "start_empty": "q.scoreboard('tigr_m_kord') == 50"
+                        }
+                     ]
+                },
+                "start_empty": {
+                    "on_entry": [
+                        "/give @p[c=1] addon:tigr_m_kord_mag 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}"
+                    ],
+                    "transitions": [ 
+                        {
+                          "reload": "query.property('tigr_m:kord') == 1"
+                        },
+                        {
+                          "default": "!q.has_player_rider"
+                        }
+                     ]
+                },
+                "reload": {
+                "animations": ["tigr_m_kord_reload"],
+                "transitions": [
+                    {
+                      "default": "!q.has_player_rider"
+                    },
+                    {
+                      "start": "q.all_animations_finished"
+                    }
+                       ]
+                    }
+            } 
+        },
+        "controller.animation.tigr_m_dviglo": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "da2": "query.health < 999500"
+                        }
+                    ]
+                },
+                "da2": {
+                    "on_entry": [
+                        "/effect @e[type=addon:tigr_m,c=1] slowness 2 222"
+                    ],
+                    "transitions": [ 
+                        {
+                          "default": "1.0"
+                        }
+                     ]
+                }
+            }
+        },
+        "controller.animation.tigr_m": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "dviglo": "q.mark_variant != 2 && q.is_alive && !q.has_rider"
+                        },
+                        {
+                            "start": "q.has_player_rider"
+                        }
+                    ]
+                },
+                "dviglo": {
+                    "on_entry": [
+                        "/summon addon:tigr_m_dviglo",
+                        "/ride @e[type=addon:tigr_m_dviglo,c=1] start_riding @s",
+                        "/summon addon:tigr_m_kapsula",
+                        "/ride @e[type=addon:tigr_m_kapsula,c=1] start_riding @s",
+                        "/summon addon:tigr_m_pass",
+                        "/summon addon:tigr_m_pass",
+                        "/summon addon:tigr_m_pass",
+                        "/ride @e[type=addon:tigr_m_pass,c=3] start_riding @s",
+                        "/summon addon:tigr_m_turret",
+                        "/ride @e[type=addon:tigr_m_turret,c=1] start_riding @s"
+                    ],
+                    "transitions": [
+                        {
+                            "start": "q.has_player_rider"
+                        }
+                    ]
+                },
+                "start": {
+                    "transitions": [
+                          {
+                            "stop": "!q.has_player_rider"
+                          }
+                    ],
+                    "on_entry": [
+                        "@s addon:sperma"
+                    ]
+                },
+                "stop": {
+                    "transitions": [
+                          {
+                            "start": "q.has_player_rider"
+                          },
+                          {
+                            "stop2": "1.0"
+                          }
+                    ],
+                    "on_entry": [
+                        "/ride @e[type=addon:tigr_m_dviglo,c=1] stop_riding",
+                        "/ride @e[type=addon:tigr_m_kapsula,c=1] stop_riding",
+                        "/ride @e[type=addon:tigr_m_pass,c=3] stop_riding",
+                        "/ride @e[type=addon:tigr_m_turret,c=1] stop_riding",
+                        "@s addon:unsperma",
+                        "/ride @e[type=addon:tigr_m_dviglo,c=1] start_riding @e[type=addon:tigr_m,c=1]",
+                        "/ride @e[type=addon:tigr_m_kapsula,c=1] start_riding @e[type=addon:tigr_m,c=1]",
+                        "/ride @e[type=addon:tigr_m_pass,c=3] start_riding @e[type=addon:tigr_m,c=1]",
+                        "/ride @e[type=addon:tigr_m_turret,c=1] start_riding @e[type=addon:tigr_m,c=1]"
+                    ]
+                },
+                "stop2": {
+                    "transitions": [
+                          {
+                            "start": "q.has_player_rider"
+                          }
+                    ],
+                    "on_entry": [
+                        "/ride @e[type=addon:tigr_m_dviglo,c=1] start_riding @e[type=addon:tigr_m,c=1]",
+                        "/ride @e[type=addon:tigr_m_kapsula,c=1] start_riding @e[type=addon:tigr_m,c=1]",
+                        "/ride @e[type=addon:tigr_m_pass,c=3] start_riding @e[type=addon:tigr_m,c=1]",
+                        "/ride @e[type=addon:tigr_m_turret,c=1] start_riding @e[type=addon:tigr_m,c=1]"
+                    ]
+                }
+            }
+        }
+    }
+}

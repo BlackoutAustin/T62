@@ -1,0 +1,107 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.pkp_zenit": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.trasser = query.scoreboard('pkp_zenit') > 90 || query.scoreboard('pkp_zenit') > 4 && query.scoreboard('pkp_zenit') < 7 || query.scoreboard('pkp_zenit') > 9 && query.scoreboard('pkp_zenit') < 12 || query.scoreboard('pkp_zenit') > 14 && query.scoreboard('pkp_zenit') < 17 || query.scoreboard('pkp_zenit') > 19 && query.scoreboard('pkp_zenit') < 22 || query.scoreboard('pkp_zenit') > 24 && query.scoreboard('pkp_zenit') < 27 || query.scoreboard('pkp_zenit') > 29 && query.scoreboard('pkp_zenit') < 32 || query.scoreboard('pkp_zenit') > 34 && query.scoreboard('pkp_zenit') < 37 || query.scoreboard('pkp_zenit') > 39 && query.scoreboard('pkp_zenit') < 42 || query.scoreboard('pkp_zenit') > 44 && query.scoreboard('pkp_zenit') < 47 || query.scoreboard('pkp_zenit') > 49 && query.scoreboard('pkp_zenit') < 52 || query.scoreboard('pkp_zenit') > 54 && query.scoreboard('pkp_zenit') < 57 || query.scoreboard('pkp_zenit') > 59 && query.scoreboard('pkp_zenit') < 62 || query.scoreboard('pkp_zenit') > 64 && query.scoreboard('pkp_zenit') < 67 || query.scoreboard('pkp_zenit') > 69 && query.scoreboard('pkp_zenit') < 72 || query.scoreboard('pkp_zenit') > 74 && query.scoreboard('pkp_zenit') < 77 || query.scoreboard('pkp_zenit') > 79 && query.scoreboard('pkp_zenit') < 82 || query.scoreboard('pkp_zenit') > 84 && query.scoreboard('pkp_zenit') < 87;",
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 1, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 2, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 3, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 4, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 5, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 6, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 7, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 8, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 9, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 10, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 11, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 12, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 13, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 14, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 15, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 16, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 17, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 18, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 19, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 20, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 21, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 22, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 23, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 24, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 25, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 26, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 0, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 1, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 2, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 3, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 4, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 5, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 6, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 7, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 8, 'addon:pkm_mag');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 1, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 2, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 3, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 4, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 5, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 6, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 7, 'addon:pkp_zenit') || query.is_item_name_any('slot.hotbar', 8, 'addon:pkp_zenit');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit') && q.is_using_item && query.all_animations_finished && !v.trasser"
+                      },
+                      {
+           "shoot2": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit') && q.is_using_item && query.all_animations_finished && v.trasser"
+                       },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:pkm_mag') && q.scoreboard('pkp_zenit') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         }
+                  ]
+              },
+          "shoot": {
+          "animations": [
+            "pkp_zenitfire"
+          ],
+          "transitions": [
+              {
+                "unfire": "q.all_animations_finished"
+              }
+                 ]
+              },
+              "shoot2": {
+              "animations": [
+                "pkp_zenitfire2"
+              ],
+              "transitions": [
+                  {
+                    "unfire": "q.all_animations_finished"
+                  }
+                     ]
+                  },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["pkp_zenitreload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+          "reload": {
+          "animations": ["pkp_zenitreload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      }
+  }
+}

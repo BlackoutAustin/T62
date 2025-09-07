@@ -1,0 +1,29 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m16a2reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 2.833331,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "2.83333": [  "/event entity @s gun:full", "/clear @s addon:m16_mag 0 1", "/give @s addon:m16_mag_empty", "/scoreboard players set @s m16a2 1" ]
+            }
+        },
+        "animation.m16a2reload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 2.083331,
+            "timeline": {
+                  "0.0": [ "/execute at @s[hasitem={item=addon:m16a2}] run replaceitem entity @s slot.weapon.mainhand 0 addon:m16a2", "/execute at @s[hasitem={item=addon:m16a2_m203}] run replaceitem entity @s slot.weapon.mainhand 0 addon:m16a2_m203","/event entity @s gun:reload2"],
+                  "2.08333": [ "/clear @s addon:m16a2 0 1", "/clear @s addon:m16a2_m203 0 1","/function m16a2reload", "/scoreboard players set @s m16a2 0", "/event entity @s gun:full" ]
+            }
+        },
+        "animation.m203_m16a2_reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 2.16671,
+            "timeline": {
+                  "0.0": [ "@s m16a2_m203_gl_reload"],
+                  "2.1667": [  "@s m16a2_m203_gl2","/clear @s addon:m406 0 1" ]
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:ai2",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.medecina",
+        "is_hidden_in_commands": false
+      }
+    },
+    "components": {
+      "minecraft:tags":{
+          "tags":[
+              "ai2"
+              ]
+              },
+    "minecraft:display_name": {
+        "value": "medickit AI-2\nUSSR"
+        },
+      "minecraft:stacked_by_data": true,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 99999
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 0
+      },
+      "minecraft:icon": {
+        "texture": "ai2"
+      },
+      "minecraft:can_destroy_in_creative": false
+    }
+  }
+}

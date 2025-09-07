@@ -1,0 +1,252 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.m16a2": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo_gl = query.is_item_name_any('slot.inventory', 0, 'addon:m406') || query.is_item_name_any('slot.inventory', 1, 'addon:m406') || query.is_item_name_any('slot.inventory', 2, 'addon:m406') || query.is_item_name_any('slot.inventory', 3, 'addon:m406') || query.is_item_name_any('slot.inventory', 4, 'addon:m406') || query.is_item_name_any('slot.inventory', 5, 'addon:m406') || query.is_item_name_any('slot.inventory', 6, 'addon:m406') || query.is_item_name_any('slot.inventory', 7, 'addon:m406') || query.is_item_name_any('slot.inventory', 8, 'addon:m406') || query.is_item_name_any('slot.inventory', 9, 'addon:m406') || query.is_item_name_any('slot.inventory', 10, 'addon:m406') || query.is_item_name_any('slot.inventory', 11, 'addon:m406') || query.is_item_name_any('slot.inventory', 12, 'addon:m406') || query.is_item_name_any('slot.inventory', 13, 'addon:m406') || query.is_item_name_any('slot.inventory', 14, 'addon:m406') || query.is_item_name_any('slot.inventory', 15, 'addon:m406') || query.is_item_name_any('slot.inventory', 16, 'addon:m406') || query.is_item_name_any('slot.inventory', 17, 'addon:m406') || query.is_item_name_any('slot.inventory', 18, 'addon:m406') || query.is_item_name_any('slot.inventory', 19, 'addon:m406') || query.is_item_name_any('slot.inventory', 20, 'addon:m406') || query.is_item_name_any('slot.inventory', 21, 'addon:m406') || query.is_item_name_any('slot.inventory', 22, 'addon:m406') || query.is_item_name_any('slot.inventory', 23, 'addon:m406') || query.is_item_name_any('slot.inventory', 24, 'addon:m406') || query.is_item_name_any('slot.inventory', 25, 'addon:m406') || query.is_item_name_any('slot.inventory', 26, 'addon:m406') || query.is_item_name_any('slot.hotbar', 0, 'addon:m406') || query.is_item_name_any('slot.hotbar', 1, 'addon:m406') || query.is_item_name_any('slot.hotbar', 2, 'addon:m406') || query.is_item_name_any('slot.hotbar', 3, 'addon:m406') || query.is_item_name_any('slot.hotbar', 4, 'addon:m406') || query.is_item_name_any('slot.hotbar', 5, 'addon:m406') || query.is_item_name_any('slot.hotbar', 6, 'addon:m406') || query.is_item_name_any('slot.hotbar', 7, 'addon:m406') || query.is_item_name_any('slot.hotbar', 8, 'addon:m406');",
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 1, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 2, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 3, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 4, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 5, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 6, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 7, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 8, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 9, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 10, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 11, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 12, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 13, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 14, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 15, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 16, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 17, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 18, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 19, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 20, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 21, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 22, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 23, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 24, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 25, 'addon:m16_mag') || query.is_item_name_any('slot.inventory', 26, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 0, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 1, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 2, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 3, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 4, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 5, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 6, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 7, 'addon:m16_mag') || query.is_item_name_any('slot.hotbar', 8, 'addon:m16_mag');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 1, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 2, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 3, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 4, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 5, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 6, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 7, 'addon:m16a2') || query.is_item_name_any('slot.hotbar', 8, 'addon:m16a2');",
+              "variable.ammo2_1 = query.is_item_name_any('slot.hotbar', 0, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 1, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 2, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 3, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 4, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 5, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 6, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 7, 'addon:m16a2_m203') || query.is_item_name_any('slot.hotbar', 8, 'addon:m16a2_m203');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "query.scoreboard('m16a2') == 30 && q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && q.is_using_item && query.all_animations_finished"
+                      },
+                      {
+           "shoot2": "query.scoreboard('m16a2') == 29  && q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "shoot3": "query.scoreboard('m16a2') <= 28  && q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && q.is_using_item && query.all_animations_finished"
+                        },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:m16_mag') && q.scoreboard('m16a2') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         },
+                         {
+              "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:m16_mag') && q.scoreboard('m16a2') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2_1"
+                          }
+                  ]
+              },
+          "shoot": {
+          "animations": ["m16a2fire"],
+          "transitions": [
+              {
+                "unfire": "q.all_animations_finished"
+              }
+                 ]
+              },
+              "shoot2": {
+              "animations": ["m16a2fire2"],
+              "transitions": [
+                  {
+                    "unfire": "q.all_animations_finished"
+                  }
+                     ]
+                  },
+                  "shoot3": {
+                  "animations": ["m16a2fire3"],
+                  "transitions": [
+                      {
+                        "unfire": "q.all_animations_finished"
+                      }
+                         ]
+                      },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["m16a2reload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+          "reload": {
+          "animations": ["m16a2reload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','m16a2')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','m16a2')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      },
+      "controller.animation.m16a2_m203_pereclucheniye": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo_gl = query.is_item_name_any('slot.inventory', 0, 'addon:m406') || query.is_item_name_any('slot.inventory', 1, 'addon:m406') || query.is_item_name_any('slot.inventory', 2, 'addon:m406') || query.is_item_name_any('slot.inventory', 3, 'addon:m406') || query.is_item_name_any('slot.inventory', 4, 'addon:m406') || query.is_item_name_any('slot.inventory', 5, 'addon:m406') || query.is_item_name_any('slot.inventory', 6, 'addon:m406') || query.is_item_name_any('slot.inventory', 7, 'addon:m406') || query.is_item_name_any('slot.inventory', 8, 'addon:m406') || query.is_item_name_any('slot.inventory', 9, 'addon:m406') || query.is_item_name_any('slot.inventory', 10, 'addon:m406') || query.is_item_name_any('slot.inventory', 11, 'addon:m406') || query.is_item_name_any('slot.inventory', 12, 'addon:m406') || query.is_item_name_any('slot.inventory', 13, 'addon:m406') || query.is_item_name_any('slot.inventory', 14, 'addon:m406') || query.is_item_name_any('slot.inventory', 15, 'addon:m406') || query.is_item_name_any('slot.inventory', 16, 'addon:m406') || query.is_item_name_any('slot.inventory', 17, 'addon:m406') || query.is_item_name_any('slot.inventory', 18, 'addon:m406') || query.is_item_name_any('slot.inventory', 19, 'addon:m406') || query.is_item_name_any('slot.inventory', 20, 'addon:m406') || query.is_item_name_any('slot.inventory', 21, 'addon:m406') || query.is_item_name_any('slot.inventory', 22, 'addon:m406') || query.is_item_name_any('slot.inventory', 23, 'addon:m406') || query.is_item_name_any('slot.inventory', 24, 'addon:m406') || query.is_item_name_any('slot.inventory', 25, 'addon:m406') || query.is_item_name_any('slot.inventory', 26, 'addon:m406') || query.is_item_name_any('slot.hotbar', 0, 'addon:m406') || query.is_item_name_any('slot.hotbar', 1, 'addon:m406') || query.is_item_name_any('slot.hotbar', 2, 'addon:m406') || query.is_item_name_any('slot.hotbar', 3, 'addon:m406') || query.is_item_name_any('slot.hotbar', 4, 'addon:m406') || query.is_item_name_any('slot.hotbar', 5, 'addon:m406') || query.is_item_name_any('slot.hotbar', 6, 'addon:m406') || query.is_item_name_any('slot.hotbar', 7, 'addon:m406') || query.is_item_name_any('slot.hotbar', 8, 'addon:m406');"
+            ],
+          "transitions": [
+            {
+ "gl": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && !q.is_riding && variable.attack_time && query.property('m16a2:m203') == 0"
+             },
+             {
+  "gl2": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && !q.is_riding && variable.attack_time && query.property('m16a2:m203') == 4"
+              },
+              {
+   "ungl": "!query.equipped_item_any_tag('slot.weapon.mainhand','m203') && query.property('m16a2:m203') == 1"
+               },
+               {
+    "ungl2": "!query.equipped_item_any_tag('slot.weapon.mainhand','m203') && query.property('m16a2:m203') == 3"
+                },
+              {
+   "ungl": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && variable.attack_time && query.property('m16a2:m203') == 1"
+               },
+               {
+    "ungl2": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && variable.attack_time && query.property('m16a2:m203') == 3"
+                },
+                {
+     "ungl": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && q.is_riding && query.property('m16a2:m203') == 1"
+                 },
+                 {
+      "ungl2": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && q.is_riding && query.property('m16a2:m203') == 3"
+                  }
+                  ]
+              },
+              "hold_gp": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar M203"
+                ]
+              },
+              "hold_gp1": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar M203 §cEmpty"
+                ]
+              },
+              "gl": {
+                "animations": ["m16a2_m203_gl"],
+                "on_entry": [
+                  "/title @s actionbar M203 §cEmpty"
+                ],
+              "transitions": [
+                {
+                  "default": "q.all_animations_finished"
+                }
+                     ]
+                  },
+                  "gl2": {
+                    "animations": ["m16a2_m203_gl2"],
+                    "on_entry": [
+                      "/title @s actionbar M203"
+                    ],
+                  "transitions": [
+                    {
+                      "default": "q.all_animations_finished"
+                    }
+                         ]
+                      },
+              "ungl": {
+              "animations": ["m16a2_m203_ungl"],
+              "on_entry": [
+                "/title @s actionbar Rifle"
+              ],
+              "transitions": [
+                {
+                  "default": "q.all_animations_finished"
+                }
+                     ]
+                  },
+                  "ungl2": {
+                  "animations": ["m16a2_m203_ungl2"],
+                  "on_entry": [
+                    "/title @s actionbar Rifle"
+                  ],
+                  "transitions": [
+                    {
+                      "default": "q.all_animations_finished"
+                    }
+                         ]
+                      }
+          }
+      },
+      "controller.animation.m203_m16a2": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo_gl = query.is_item_name_any('slot.inventory', 0, 'addon:m406') || query.is_item_name_any('slot.inventory', 1, 'addon:m406') || query.is_item_name_any('slot.inventory', 2, 'addon:m406') || query.is_item_name_any('slot.inventory', 3, 'addon:m406') || query.is_item_name_any('slot.inventory', 4, 'addon:m406') || query.is_item_name_any('slot.inventory', 5, 'addon:m406') || query.is_item_name_any('slot.inventory', 6, 'addon:m406') || query.is_item_name_any('slot.inventory', 7, 'addon:m406') || query.is_item_name_any('slot.inventory', 8, 'addon:m406') || query.is_item_name_any('slot.inventory', 9, 'addon:m406') || query.is_item_name_any('slot.inventory', 10, 'addon:m406') || query.is_item_name_any('slot.inventory', 11, 'addon:m406') || query.is_item_name_any('slot.inventory', 12, 'addon:m406') || query.is_item_name_any('slot.inventory', 13, 'addon:m406') || query.is_item_name_any('slot.inventory', 14, 'addon:m406') || query.is_item_name_any('slot.inventory', 15, 'addon:m406') || query.is_item_name_any('slot.inventory', 16, 'addon:m406') || query.is_item_name_any('slot.inventory', 17, 'addon:m406') || query.is_item_name_any('slot.inventory', 18, 'addon:m406') || query.is_item_name_any('slot.inventory', 19, 'addon:m406') || query.is_item_name_any('slot.inventory', 20, 'addon:m406') || query.is_item_name_any('slot.inventory', 21, 'addon:m406') || query.is_item_name_any('slot.inventory', 22, 'addon:m406') || query.is_item_name_any('slot.inventory', 23, 'addon:m406') || query.is_item_name_any('slot.inventory', 24, 'addon:m406') || query.is_item_name_any('slot.inventory', 25, 'addon:m406') || query.is_item_name_any('slot.inventory', 26, 'addon:m406') || query.is_item_name_any('slot.hotbar', 0, 'addon:m406') || query.is_item_name_any('slot.hotbar', 1, 'addon:m406') || query.is_item_name_any('slot.hotbar', 2, 'addon:m406') || query.is_item_name_any('slot.hotbar', 3, 'addon:m406') || query.is_item_name_any('slot.hotbar', 4, 'addon:m406') || query.is_item_name_any('slot.hotbar', 5, 'addon:m406') || query.is_item_name_any('slot.hotbar', 6, 'addon:m406') || query.is_item_name_any('slot.hotbar', 7, 'addon:m406') || query.is_item_name_any('slot.hotbar', 8, 'addon:m406');"
+            ],
+          "transitions": [
+            {
+ "reload": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && query.is_using_item && query.property('m16a2:m203') == 1 && v.ammo_gl"
+             },
+             {
+  "shoot": "query.equipped_item_any_tag('slot.weapon.mainhand','m16a2') && query.equipped_item_any_tag('slot.weapon.mainhand','m203') && query.is_using_item && query.property('m16a2:m203') == 3"
+              }
+                  ]
+              },
+              "reload": {
+              "animations": ["m203_m16a2_reload"],
+              "transitions": [
+                {
+                  "default": "q.all_animations_finished"
+                }
+                     ]
+                  },
+                  "shoot": {
+                    "animations": ["m203_m16a2"],
+                  "transitions": [
+                    {
+                      "default": "q.all_animations_finished"
+                    }
+                         ]
+                      }
+          }
+      }
+  }
+}

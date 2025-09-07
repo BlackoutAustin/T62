@@ -1,0 +1,12 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m1151_m2hb_fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 12.7x108_bullet", "/playanimation @s animation.m1151_m2hb_shoot", "/playsound addon.m2hb @a ^^^0.10 200 1", "/function m1151_m2hb"]
+            }
+        }
+    }
+}

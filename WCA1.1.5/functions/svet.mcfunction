@@ -1,0 +1,1 @@
+execute as @s run execute if block ^^1^1 air run setblock ^^1^1 addon:medium_svet

@@ -1,0 +1,43 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.b8": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "aim": "q.is_using_item && query.is_item_name_any('slot.weapon.mainhand',0,'addon:b8') || query.is_item_name_any('slot.weapon.mainhand',0,'addon:m22') && q.is_using_item"
+                        }
+                    ]
+                },
+                "aim": {
+                    "on_entry": [
+                    "/title @s[hasitem={item=addon:b8,location=slot.weapon.mainhand}] title hud.b8",
+                    "/title @s[hasitem={item=addon:m22,location=slot.weapon.mainhand}] title hud.m22",
+                      "/effect @s slowness 1111111 8 true"
+                    ],
+                    "transitions": [
+                        {
+                            "unaim": "!q.is_using_item"
+                        },
+                        {
+                            "unaim": "!query.is_item_name_any('slot.weapon.mainhand',0,'addon:b8') && !query.is_item_name_any('slot.weapon.mainhand',0,'addon:m22')"
+                        }
+                    ]
+                },
+                "unaim": {
+                  "transitions": [
+                    {
+                      "default": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+                    "/title @s title hud.empty",
+                    "/effect @s slowness 0 0 true"
+                  ]
+                }
+            }
+        }
+    }
+}

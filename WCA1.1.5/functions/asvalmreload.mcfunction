@@ -1,0 +1,20 @@
+give @s[scores={asvalm=20}] addon:asval_mag_empty
+give @s[scores={asvalm=19}] addon:asval_mag_empty 1 19
+give @s[scores={asvalm=18}] addon:asval_mag_empty 1 18
+give @s[scores={asvalm=17}] addon:asval_mag_empty 1 17
+give @s[scores={asvalm=16}] addon:asval_mag_empty 1 16
+give @s[scores={asvalm=15}] addon:asval_mag_empty 1 15
+give @s[scores={asvalm=14}] addon:asval_mag_empty 1 14
+give @s[scores={asvalm=13}] addon:asval_mag_empty 1 13
+give @s[scores={asvalm=12}] addon:asval_mag_empty 1 12
+give @s[scores={asvalm=11}] addon:asval_mag_empty 1 11
+give @s[scores={asvalm=10}] addon:asval_mag_empty 1 10
+give @s[scores={asvalm=9}] addon:asval_mag_empty 1 9
+give @s[scores={asvalm=8}] addon:asval_mag_empty 1 8
+give @s[scores={asvalm=7}] addon:asval_mag_empty 1 7
+give @s[scores={asvalm=6}] addon:asval_mag_empty 1 6
+give @s[scores={asvalm=5}] addon:asval_mag_empty 1 5
+give @s[scores={asvalm=4}] addon:asval_mag_empty 1 4
+give @s[scores={asvalm=3}] addon:asval_mag_empty 1 3
+give @s[scores={asvalm=2}] addon:asval_mag_empty 1 2
+give @s[scores={asvalm=1}] addon:asval_mag_empty 1 1

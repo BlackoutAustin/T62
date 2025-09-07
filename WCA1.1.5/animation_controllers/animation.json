@@ -1,0 +1,118 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.crawl": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "crawl": "query.is_sneaking && query.head_x_rotation(0) >= 80 && query.is_riding == 0.0 && !query.equipped_item_any_tag('slot.weapon.mainhand','reload')"
+                        }
+                    ],
+                    "on_entry": [
+                        "/tag @e[type=coptaine:crawler,c=1,r=1] add kill",
+                        "@s off"
+                    ]
+                },
+                "crawl": {
+                    "on_entry": [
+                        "/summon coptaine:crawler"
+                    ],
+                    "transitions": [
+                        {
+                            "start-crawl": "query.is_riding"
+                        },
+                        {
+                            "default": "query.head_x_rotation(0) < 80"
+                        }
+                    ]
+                },
+                "start-crawl": {
+                    "on_entry": [
+                        "/execute if entity @e[type=coptaine:crawler,r=1] run event entity @s on"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_riding"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.riding": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "start": "query.is_riding"
+                        },
+                        {
+                            "stop": "!query.is_riding"
+                        }
+                    ]
+                },
+                "start": {
+                    "transitions": [
+                        {
+                            "stop": "!query.is_riding"
+                        }
+                    ],
+                    "on_entry": [
+                        "/tag @s add riding"
+                    ]
+                },
+                "stop": {
+                    "transitions": [
+                        {
+                            "start": "query.is_riding"
+                        }
+                    ],
+                    "on_entry": [
+                        "/clear @s addon:tigr_m_kord_mag",
+                        "/clear @s addon:tigr_m_kord_fire",
+                        "/clear @s addon:m1151_m2hb_mag",
+                        "/clear @s addon:m1151_m2hb_fire",
+                        "/tag @s remove riding"
+                    ]
+                }
+            }
+        },
+        "controller.animation.crawl2": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "crawl": "query.equipped_item_any_tag('slot.weapon.mainhand','reload') || query.equipped_item_any_tag('slot.weapon.mainhand','pkm') || query.equipped_item_any_tag('slot.weapon.mainhand','pkp') || query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit') || query.equipped_item_any_tag('slot.weapon.mainhand','svd') || query.equipped_item_any_tag('slot.weapon.mainhand','svds') || query.equipped_item_any_tag('slot.weapon.mainhand','fnmag') || query.equipped_item_any_tag('slot.weapon.mainhand','m21') || query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                        },
+                        {
+                            "crawl2": "q.is_using_item && query.is_item_name_any('slot.weapon.mainhand',0,'addon:b8') || query.is_item_name_any('slot.weapon.mainhand',0,'addon:m22')"
+                        }
+                    ]
+                },
+                "crawl": {
+                    "on_entry": [
+                        "/effect @e[type=coptaine:crawler,r=1] slowness 1 225 true"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.equipped_item_any_tag('slot.weapon.mainhand','reload') || !query.equipped_item_any_tag('slot.weapon.mainhand','pkm') || !query.equipped_item_any_tag('slot.weapon.mainhand','pkp') || !query.equipped_item_any_tag('slot.weapon.mainhand','pkp_zenit') || !query.equipped_item_any_tag('slot.weapon.mainhand','svd') || !query.equipped_item_any_tag('slot.weapon.mainhand','svds') || !query.equipped_item_any_tag('slot.weapon.mainhand','fnmag') || !query.equipped_item_any_tag('slot.weapon.mainhand','m21') || !query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                        }
+                    ]
+                },
+                "crawl2": {
+                    "on_entry": [
+                        "/effect @e[type=coptaine:crawler,r=1] slowness 1 225 true"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item"
+                        },
+                        {
+                            "default": "!query.is_item_name_any('slot.weapon.mainhand',0,'addon:b8') && !query.is_item_name_any('slot.weapon.mainhand',0,'addon:m22')"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

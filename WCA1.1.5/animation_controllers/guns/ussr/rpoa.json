@@ -1,0 +1,52 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.rpoa": {
+            "initial_state": "default",
+            "states": {
+            "default": {
+            "transitions": [
+                       {
+            "shoot": "query.equipped_item_any_tag('slot.weapon.mainhand','rpoa') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && q.is_using_item && query.all_animations_finished"
+                        },
+                        {
+             "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','rpoa') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && !q.is_using_item && query.all_animations_finished"
+                         },
+                           {
+                "hold_empty": "query.equipped_item_any_tag('slot.weapon.mainhand','rpoa') && query.equipped_item_any_tag('slot.weapon.mainhand','empty')"
+                            }
+                    ]
+                },
+            "shoot": {
+            "animations": ["rpoafire"],
+            "transitions": [
+                {
+                  "unfire": "q.all_animations_finished"
+                }
+                   ]
+                },
+                "unfire": {
+                  "transitions": [
+                    {
+                      "default": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+                    "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                    "@s unfire"
+                  ]
+                },
+                "hold_empty": {
+                  "transitions": [
+                    {
+                      "default": "1.0"
+                    }
+                  ],
+                  "on_entry": [
+                    "/title @s actionbar §cEmpty"
+                  ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1422 @@
+{
+  "format_version": "1.19.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+			"properties": {
+				"addon:gun": {
+					"type": "int",
+					"range": [0, 5],
+					"default": 0,
+					"client_sync": true
+				},
+				"addon:rpg7": {
+					"type": "int",
+					"range": [0, 3],
+					"default": 0,
+					"client_sync": true
+				},
+				"gun:fire": {
+					"type": "int",
+					"range": [0, 2],
+					"default": 0,
+					"client_sync": true
+				},
+				"ak74m_zenit:gp25": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"ak74m:gp25": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"akms:gp25": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"ak74:gp25": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"aks74:gp25": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"m4a1:m203": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"m16a4:m203": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"m16a1:m203": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"m16a2:m203": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"ak12:gp25": {
+					"type": "int",
+					"range": [0, 4],
+					"default": 0,
+					"client_sync": true
+				},
+				"pkm:ammo": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"pkm:trasser": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"pkp:ammo": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"pkp:trasser": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"pkp_zenit:ammo": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"pkp_zenit:trasser": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"m240b:ammo": {
+					"type": "int",
+					"range": [0, 51],
+					"default": 0,
+					"client_sync": true
+				},
+				"m249:ammo": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+				"m249pip:ammo": {
+					"type": "int",
+					"range": [0, 101],
+					"default": 0,
+					"client_sync": true
+				},
+        "vehicle:bmp3": {
+          "type": "int",
+          "range": [0, 1],
+          "default": 0,
+          "client_sync": true
+        },
+        "2a72:fire": {
+          "type": "int",
+          "range": [0, 1],
+          "default": 0,
+          "client_sync": true
+        },
+        "2a70:fire": {
+          "type": "int",
+          "range": [0, 1],
+          "default": 0,
+          "client_sync": true
+        }
+			},
+	  "scripts": {
+            "animate":[
+              "gun_system",
+              "armor_system",
+
+              "crawl2",
+              "crawl",
+              "riding",
+
+              "tigr_m",
+              "tigr_m_2",
+              
+              "m1151",
+              "m1151_2",
+              "aptechka_controller",
+              "ai2",
+              "ifak",
+
+              "b8",
+
+              "rgd5",
+              "m67",
+              
+              {"ak12": "!query.is_riding && query.property('ak12:gp25') == 0 || query.property('ak12:gp25') == 4"},
+              {"ak12_gp25_pereclucheniye": "!query.is_riding"},
+              {"controller_gp25_ak12": "!query.is_riding"},
+              {"ak12": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('ak12:gp25') == 0 || query.property('ak12:gp25') == 4"},
+              {"controller_gp25_ak12": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"ak12_gp25_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"ak74m": "!query.is_riding && query.property('ak74m:gp25') == 0 || query.property('ak74m:gp25') == 4"},
+              {"ak74m_gp25_pereclucheniye": "!query.is_riding"},
+              {"controller_gp25_ak74m": "!query.is_riding"},
+              {"ak74m": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('ak74m:gp25') == 0 || query.property('ak74m:gp25') == 4"},
+              {"controller_gp25_ak74m": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"ak74m_gp25_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"ak74m_zenit": "!query.is_riding && query.property('ak74m_zenit:gp25') == 0 || query.property('ak74m_zenit:gp25') == 4"},
+              {"ak74m_zenit_gp25_pereclucheniye": "!query.is_riding"},
+              {"controller_gp25_ak74m_zenit": "!query.is_riding"},
+              {"ak74m_zenit": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('ak74m_zenit:gp25') == 0 || query.property('ak74m_zenit:gp25') == 4"},
+              {"controller_gp25_ak74m_zenit": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"ak74m_zenit_gp25_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"pkp": "!query.is_riding"},
+              {"pkp": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"pkp_zenit": "!query.is_riding"},
+              {"pkp_zenit": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"svds": "!query.is_riding"},
+              {"svds": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"akms": "!query.is_riding && query.property('akms:gp25') == 0 || query.property('akms:gp25') == 4"},
+              {"akms_gp25_pereclucheniye": "!query.is_riding"},
+              {"controller_gp25_akms": "!query.is_riding"},
+              {"akms": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('akms:gp25') == 0 || query.property('akms:gp25') == 4"},
+              {"controller_gp25_akms": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"akms_gp25_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"ak74": "!query.is_riding && query.property('ak74:gp25') == 0 || query.property('ak74:gp25') == 4"},
+              {"ak74_gp25_pereclucheniye": "!query.is_riding"},
+              {"controller_gp25_ak74": "!query.is_riding"},
+              {"ak74": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('ak74:gp25') == 0 || query.property('ak74:gp25') == 4"},
+              {"controller_gp25_ak74": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"ak74_gp25_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"aks74": "!query.is_riding && query.property('aks74:gp25') == 0 || query.property('aks74:gp25') == 4"},
+              {"aks74_gp25_pereclucheniye": "!query.is_riding"},
+              {"controller_gp25_aks74": "!query.is_riding"},
+              {"aks74": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('aks74:gp25') == 0 || query.property('aks74:gp25') == 4"},
+              {"controller_gp25_aks74": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"aks74_gp25_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"aks74u": "!query.is_riding"},
+              {"aks74u": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"rpk": "!query.is_riding"},
+              {"rpk": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"asval": "!query.is_riding"},
+              {"asval": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"asvalm": "!query.is_riding"},
+              {"asvalm": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"pkm": "!query.is_riding"},
+              {"pkm": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"svd": "!query.is_riding"},
+              {"svd": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"mosin": "!query.is_riding"},
+              {"mosin": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"rpg7": "!query.is_riding"},
+              
+              {"m4a1": "!query.is_riding && query.property('m4a1:m203') == 0 || query.property('m4a1:m203') == 4"},
+              {"m4a1_m203_pereclucheniye": "!query.is_riding"},
+              {"controller_m203_m4a1": "!query.is_riding"},
+              {"m4a1": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('m4a1:m203') == 0 || query.property('m4a1:m203') == 4"},
+              {"controller_m203_m4a1": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"m4a1_m203_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"m16a4": "!query.is_riding && query.property('m16a4:m203') == 0 || query.property('m16a4:m203') == 4"},
+              {"m16a4_m203_pereclucheniye": "!query.is_riding"},
+              {"controller_m203_m16a4": "!query.is_riding"},
+              {"m16a4": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('m16a4:m203') == 0 || query.property('m16a4:m203') == 4"},
+              {"controller_m203_m16a4": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"m16a4_m203_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"m16a1": "!query.is_riding && query.property('m16a1:m203') == 0 || query.property('m16a1:m203') == 4"},
+              {"m16a1_m203_pereclucheniye": "!query.is_riding"},
+              {"controller_m203_m16a1": "!query.is_riding"},
+              {"m16a1": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('m16a1:m203') == 0 || query.property('m16a1:m203') == 4"},
+              {"controller_m203_m16a1": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"m16a1_m203_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"m16a2": "!query.is_riding && query.property('m16a2:m203') == 0 || query.property('m16a2:m203') == 4"},
+              {"m16a2_m203_pereclucheniye": "!query.is_riding"},
+              {"controller_m203_m16a2": "!query.is_riding"},
+              {"m16a2": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1 && query.property('m16a2:m203') == 0 || query.property('m16a2:m203') == 4"},
+              {"controller_m203_m16a2": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              {"m16a2_m203_pereclucheniye": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"m110": "!query.is_riding"},
+              {"m110": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"m21": "!query.is_riding"},
+              {"m21": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"m240b": "!query.is_riding"},
+              {"m240b": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"m249": "!query.is_riding"},
+              {"m249": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+              
+              {"m249pip": "!query.is_riding"},
+              {"m249pip": "!query.ground_speed > 0.0 && query.is_riding && query.mark_variant == 1"},
+
+              {"m72": "!query.is_riding"},
+              
+              
+              "aim"
+			]
+	  },
+	  "animations":{
+      "gun_system": "controller.animation.gun_system",
+      "armor_system": "controller.animation.armor_system",
+
+      "crawl": "controller.animation.crawl",
+      "crawl2": "controller.animation.crawl2",
+      "riding": "controller.animation.riding",
+
+      "tigr_m": "controller.animation.tigr_m_player",
+      "tigr_m_2": "controller.animation.tigr_m_player_2",
+      "tigr_m_kord_fire": "animation.tigr_m_kord_fire",
+
+
+      "m1151": "controller.animation.m1151_player",
+      "m1151_2": "controller.animation.m1151_player_2",
+      "m1151_m2hb_fire": "animation.m1151_m2hb_fire",
+
+      "aptechka_controller": "controller.animation.aptechka",
+      "aptechka": "animation.aptechka",
+      "ai2": "controller.animation.ai2",
+      "ai2use": "animation.ai2use",
+      "ifak": "controller.animation.ifak",
+      "ifakuse": "animation.ifakuse",
+      "aim": "controller.animation.aim",
+      "b8": "controller.animation.b8",
+
+      "rgd5": "controller.animation.rgd5",
+      "rgd5_use": "animation.rgd5_use",
+      "rgd5_unuse": "animation.rgd5_unuse",
+      "m67": "controller.animation.m67",
+      "m67_use": "animation.m67_use",
+      "m67_unuse": "animation.m67_unuse",
+
+      "bmp3": "controller.animation.bmp3",
+      "bmp3_2": "controller.animation.bmp3_2",
+      "bmp3_2a72": "controller.animation.bmp3_2a72",
+      "bmp3_2a70": "controller.animation.bmp3_2a70",
+      "2a72_fire": "animation.2a72_fire",
+      "2a70_fire": "animation.2a70_fire",
+
+
+      "rpg7": "controller.animation.rpg7",
+      "rpg7reload": "animation.rpg7reload",
+      "rpg7reload2": "animation.rpg7reload2",
+      "rpg7fire": "animation.rpg7fire",
+
+      "rpoa": "controller.animation.rpoa",
+      "rpoafire": "animation.rpoafire",
+
+      "asval": "controller.animation.asval",
+      "asvalreload": "animation.asvalreload",
+      "asvalreload2": "animation.asvalreload2",
+      "asvalfire": "animation.asvalfire",
+
+      "asvalm": "controller.animation.asvalm",
+      "asvalmreload": "animation.asvalmreload",
+      "asvalmreload2": "animation.asvalmreload2",
+      "asvalmfire": "animation.asvalmfire",
+ 
+ 
+      "rpk": "controller.animation.rpk",
+      "rpkreload": "animation.rpkreload",
+      "rpkreload2": "animation.rpkreload2",
+      "rpkfire": "animation.rpkfire",
+
+      "ak74": "controller.animation.ak74",
+      "ak74reload": "animation.ak74reload",
+      "ak74reload2": "animation.ak74reload2",
+      "ak74fire": "animation.ak74fire",
+      "ak74fire_pbs": "animation.ak74fire_pbs",
+      "ak74_gp25_pereclucheniye": "controller.animation.ak74_gp25_pereclucheniye",
+      "controller_gp25_ak74": "controller.animation.gp25_ak74",
+      "gp25_ak74": "animation.gp25_ak74",
+      "gp25_ak74_reload": "animation.gp25_ak74_reload",
+      "ak74_gp25_gl": "animation.ak74_gp25_gl",
+      "ak74_gp25_ungl": "animation.ak74_gp25_ungl",
+      "ak74_gp25_gl2": "animation.ak74_gp25_gl2",
+      "ak74_gp25_ungl2": "animation.ak74_gp25_ungl2",
+
+      "aks74": "controller.animation.aks74",
+      "aks74reload": "animation.aks74reload",
+      "aks74reload2": "animation.aks74reload2",
+      "aks74fire": "animation.aks74fire",
+      "aks74fire_pbs": "animation.aks74fire_pbs",
+      "aks74_gp25_pereclucheniye": "controller.animation.aks74_gp25_pereclucheniye",
+      "controller_gp25_aks74": "controller.animation.gp25_aks74",
+      "gp25_aks74": "animation.gp25_aks74",
+      "gp25_aks74_reload": "animation.gp25_aks74_reload",
+      "aks74_gp25_gl": "animation.aks74_gp25_gl",
+      "aks74_gp25_ungl": "animation.aks74_gp25_ungl",
+      "aks74_gp25_gl2": "animation.aks74_gp25_gl2",
+      "aks74_gp25_ungl2": "animation.aks74_gp25_ungl2",
+      
+
+      "aks74u": "controller.animation.aks74u",
+      "aks74ureload": "animation.aks74ureload",
+      "aks74ureload2": "animation.aks74ureload2",
+      "aks74ufire": "animation.aks74ufire",
+      "aks74ufire_pbs": "animation.aks74ufire_pbs",
+
+     "ak74m_zenit": "controller.animation.ak74m_zenit",
+     "ak74m_zenitreload": "animation.ak74m_zenitreload",
+     "ak74m_zenitreload2": "animation.ak74m_zenitreload2",
+     "ak74m_zenitfire": "animation.ak74m_zenitfire",
+     "ak74m_zenitfire_pbs": "animation.ak74m_zenitfire_pbs",
+     "ak74m_zenit_gp25_pereclucheniye": "controller.animation.ak74m_zenit_gp25_pereclucheniye",
+     "controller_gp25_ak74m_zenit": "controller.animation.gp25_ak74m_zenit",
+     "gp25_ak74m_zenit": "animation.gp25_ak74m_zenit",
+     "gp25_ak74m_zenit_reload": "animation.gp25_ak74m_zenit_reload",
+     "ak74m_zenit_gp25_gl": "animation.ak74m_zenit_gp25_gl",
+     "ak74m_zenit_gp25_ungl": "animation.ak74m_zenit_gp25_ungl",
+     "ak74m_zenit_gp25_gl2": "animation.ak74m_zenit_gp25_gl2",
+     "ak74m_zenit_gp25_ungl2": "animation.ak74m_zenit_gp25_ungl2",
+     
+     "ak74m": "controller.animation.ak74m",
+     "ak74mreload": "animation.ak74mreload",
+     "ak74mreload2": "animation.ak74mreload2",
+     "ak74mfire": "animation.ak74mfire",
+     "ak74mfire_pbs": "animation.ak74mfire_pbs",
+     "ak74m_gp25_pereclucheniye": "controller.animation.ak74m_gp25_pereclucheniye",
+     "controller_gp25_ak74m": "controller.animation.gp25_ak74m",
+     "gp25_ak74m": "animation.gp25_ak74m",
+     "gp25_ak74m_reload": "animation.gp25_ak74m_reload",
+     "ak74m_gp25_gl": "animation.ak74m_gp25_gl",
+     "ak74m_gp25_ungl": "animation.ak74m_gp25_ungl",
+     "ak74m_gp25_gl2": "animation.ak74m_gp25_gl2",
+     "ak74m_gp25_ungl2": "animation.ak74m_gp25_ungl2",
+
+     "akms": "controller.animation.akms",
+     "akmsreload": "animation.akmsreload",
+     "akmsreload2": "animation.akmsreload2",
+     "akmsfire": "animation.akmsfire",
+     "akmsfire_pbs": "animation.akmsfire_pbs",
+     "akms_gp25_pereclucheniye": "controller.animation.akms_gp25_pereclucheniye",
+     "controller_gp25_akms": "controller.animation.gp25_akms",
+     "gp25_akms": "animation.gp25_akms",
+     "gp25_akms_reload": "animation.gp25_akms_reload",
+     "akms_gp25_gl": "animation.akms_gp25_gl",
+     "akms_gp25_ungl": "animation.akms_gp25_ungl",
+     "akms_gp25_gl2": "animation.akms_gp25_gl2",
+     "akms_gp25_ungl2": "animation.akms_gp25_ungl2",
+     
+     "ak12": "controller.animation.ak12",
+     "ak12reload": "animation.ak12reload",
+     "ak12reload2": "animation.ak12reload2",
+     "ak12fire": "animation.ak12fire",
+     "ak12fire_pbs": "animation.ak12fire_pbs",
+     "ak12_gp25_pereclucheniye": "controller.animation.ak12_gp25_pereclucheniye",
+     "controller_gp25_ak12": "controller.animation.gp25_ak12",
+     "gp25_ak12": "animation.gp25_ak12",
+     "gp25_ak12_reload": "animation.gp25_ak12_reload",
+     "ak12_gp25_gl": "animation.ak12_gp25_gl",
+     "ak12_gp25_ungl": "animation.ak12_gp25_ungl",
+     "ak12_gp25_gl2": "animation.ak12_gp25_gl2",
+     "ak12_gp25_ungl2": "animation.ak12_gp25_ungl2",
+
+     "pkm": "controller.animation.pkm",
+     "pkmreload": "animation.pkmreload",
+     "pkmreload2": "animation.pkmreload2",
+     "pkmfire": "animation.pkmfire",
+     "pkmfire2": "animation.pkmfire2",
+     "pkmfire_crawl": "animation.pkmfire_crawl",
+     "pkmfire_crawl2": "animation.pkmfire_crawl2",
+     
+     "pkp": "controller.animation.pkp",
+     "pkpreload": "animation.pkpreload",
+     "pkpreload2": "animation.pkpreload2",
+     "pkpfire": "animation.pkpfire",
+     "pkpfire2": "animation.pkpfire2",
+     "pkpfire_crawl": "animation.pkpfire_crawl",
+     "pkpfire_crawl2": "animation.pkpfire_crawl2",
+     
+     "pkp_zenit": "controller.animation.pkp_zenit",
+     "pkp_zenitreload": "animation.pkp_zenitreload",
+     "pkp_zenitreload2": "animation.pkp_zenitreload2",
+     "pkp_zenitfire": "animation.pkp_zenitfire",
+     "pkp_zenitfire2": "animation.pkp_zenitfire2",
+     "pkp_zenitfire_crawl": "animation.pkp_zenitfire_crawl",
+     "pkp_zenitfire_crawl2": "animation.pkp_zenitfire_crawl2",
+     
+     "mosin": "controller.animation.mosin",
+     "mosinreload": "animation.mosinreload",
+     "mosinzatvor": "animation.mosinzatvor",
+     "mosinreload2": "animation.mosinreload2",
+     "mosinfire": "animation.mosinfire",
+     "mosinfire2": "animation.mosinfire2",
+     
+     "svd": "controller.animation.svd",
+     "svdreload": "animation.svdreload",
+     "svdreload2": "animation.svdreload2",
+     "svdfire": "animation.svdfire",
+
+     "svds": "controller.animation.svds",
+     "svdsreload": "animation.svdsreload",
+     "svdsreload2": "animation.svdsreload2",
+     "svdsfire": "animation.svdsfire",
+
+     "m21": "controller.animation.m21",
+     "m21reload": "animation.m21reload",
+     "m21reload2": "animation.m21reload2",
+     "m21fire": "animation.m21fire",
+
+     "m110": "controller.animation.m110",
+     "m110reload": "animation.m110reload",
+     "m110reload2": "animation.m110reload2",
+     "m110fire": "animation.m110fire",
+     
+     "m72": "controller.animation.m72",
+     "m72fire": "animation.m72fire",
+
+     "m240b": "controller.animation.m240b",
+     "m240breload": "animation.m240breload",
+     "m240breload2": "animation.m240breload2",
+     "m240bfire": "animation.m240bfire",
+     "m240bfire2": "animation.m240bfire2",
+     "m240bfire_crawl": "animation.m240bfire_crawl",
+     "m240bfire_crawl2": "animation.m240bfire_crawl2",
+
+     "m249": "controller.animation.m249",
+     "m249reload": "animation.m249reload",
+     "m249reload2": "animation.m249reload2",
+     "m249fire": "animation.m249fire",
+     "m249fire2": "animation.m249fire2",
+     "m249fire_crawl": "animation.m249fire_crawl",
+     "m249fire_crawl2": "animation.m249fire_crawl2",
+     
+
+     "m249pip": "controller.animation.m249pip",
+     "m249pipreload": "animation.m249pipreload",
+     "m249pipreload2": "animation.m249pipreload2",
+     "m249pipfire": "animation.m249pipfire",
+     "m249pipfire2": "animation.m249pipfire2",
+     "m249pipfire_crawl": "animation.m249pipfire_crawl",
+     "m249pipfire_crawl2": "animation.m249pipfire_crawl2",
+
+     "m4a1": "controller.animation.m4a1",
+     "m4a1reload": "animation.m4a1reload",
+     "m4a1reload2": "animation.m4a1reload2",
+     "m4a1fire": "animation.m4a1fire",
+     "m4a1fire_pbs": "animation.m4a1fire_pbs",
+     "m4a1_m203_pereclucheniye": "controller.animation.m4a1_m203_pereclucheniye",
+     "controller_m203_m4a1": "controller.animation.m203_m4a1",
+     "m203_m4a1": "animation.m203_m4a1",
+     "m203_m4a1_reload": "animation.m203_m4a1_reload",
+     "m4a1_m203_gl": "animation.m4a1_m203_gl",
+     "m4a1_m203_ungl": "animation.m4a1_m203_ungl",
+     "m4a1_m203_gl2": "animation.m4a1_m203_gl2",
+     "m4a1_m203_ungl2": "animation.m4a1_m203_ungl2",
+
+
+     "m16a4": "controller.animation.m16a4",
+     "m16a4reload": "animation.m16a4reload",
+     "m16a4reload2": "animation.m16a4reload2",
+     "m16a4fire": "animation.m16a4fire",
+     "m16a4fire2": "animation.m16a4fire2",
+     "m16a4fire3": "animation.m16a4fire3",
+     "m16a4fire_pbs": "animation.m16a4fire_pbs",
+     "m16a4_m203_pereclucheniye": "controller.animation.m16a4_m203_pereclucheniye",
+     "controller_m203_m16a4": "controller.animation.m203_m16a4",
+     "m203_m16a4": "animation.m203_m16a4",
+     "m203_m16a4_reload": "animation.m203_m16a4_reload",
+     "m16a4_m203_gl": "animation.m16a4_m203_gl",
+     "m16a4_m203_ungl": "animation.m16a4_m203_ungl",
+     "m16a4_m203_gl2": "animation.m16a4_m203_gl2",
+     "m16a4_m203_ungl2": "animation.m16a4_m203_ungl2",
+
+     "m16a1": "controller.animation.m16a1",
+     "m16a1reload": "animation.m16a1reload",
+     "m16a1reload2": "animation.m16a1reload2",
+     "m16a1fire": "animation.m16a1fire",
+     "m16a1fire_pbs": "animation.m16a1fire_pbs",
+     "m16a1_m203_pereclucheniye": "controller.animation.m16a1_m203_pereclucheniye",
+     "controller_m203_m16a1": "controller.animation.m203_m16a1",
+     "m203_m16a1": "animation.m203_m16a1",
+     "m203_m16a1_reload": "animation.m203_m16a1_reload",
+     "m16a1_m203_gl": "animation.m16a1_m203_gl",
+     "m16a1_m203_ungl": "animation.m16a1_m203_ungl",
+     "m16a1_m203_gl2": "animation.m16a1_m203_gl2",
+     "m16a1_m203_ungl2": "animation.m16a1_m203_ungl2",
+
+     "m16a2": "controller.animation.m16a2",
+     "m16a2reload": "animation.m16a2reload",
+     "m16a2reload2": "animation.m16a2reload2",
+     "m16a2fire": "animation.m16a2fire",
+     "m16a2fire2": "animation.m16a2fire2",
+     "m16a2fire3": "animation.m16a2fire3",
+     "m16a2fire_pbs": "animation.m16a2fire_pbs",
+     "m16a2_m203_pereclucheniye": "controller.animation.m16a2_m203_pereclucheniye",
+     "controller_m203_m16a2": "controller.animation.m203_m16a2",
+     "m203_m16a2": "animation.m203_m16a2",
+     "m203_m16a2_reload": "animation.m203_m16a2_reload",
+     "m16a2_m203_gl": "animation.m16a2_m203_gl",
+     "m16a2_m203_ungl": "animation.m16a2_m203_ungl",
+     "m16a2_m203_gl2": "animation.m16a2_m203_gl2",
+     "m16a2_m203_ungl2": "animation.m16a2_m203_ungl2"
+	  }
+    },
+
+    "component_groups": {
+
+			"minecraft:standard_player": { 
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "minecraft:npc": {
+        },
+
+				"minecraft:health": {
+					"value": 40,
+					"max": 40
+				},
+				"minecraft:movement": {
+					"value": 0.1
+				},
+				"minecraft:attack": { "damage": 1 }
+			},
+		
+      "rgd5":{
+        "minecraft:spawn_entity": 
+        { 
+          "entities": [
+           {
+             "min_wait_time": 0,
+              "max_wait_time": 0,
+               "single_use": true,
+                "spawn_entity": "addon:granata",
+                "spawn_event": "rgd5",
+                 "num_to_spawn": 1 
+               }
+             ]
+          }
+        },
+        "m67":{
+        "minecraft:spawn_entity": 
+        { 
+          "entities": [
+           {
+             "min_wait_time": 0,
+              "max_wait_time": 0,
+               "single_use": true,
+                "spawn_entity": "addon:granata",
+                "spawn_event": "m67",
+                 "num_to_spawn": 1 
+               }
+             ]
+          }
+        },
+      "vog25_bullet":{
+        "minecraft:spawn_entity": 
+        { 
+          "entities": [
+           {
+             "min_wait_time": 0,
+              "max_wait_time": 0,
+               "single_use": true,
+                "spawn_entity": "addon:vog25",
+                 "num_to_spawn": 1 
+               }
+             ]
+          }
+        },
+        "m406_bullet":{
+          "minecraft:spawn_entity": 
+          { 
+            "entities": [
+             {
+               "min_wait_time": 0,
+                "max_wait_time": 0,
+                 "single_use": true,
+                  "spawn_entity": "addon:m406",
+                   "num_to_spawn": 1 
+                 }
+               ]
+            }
+          },
+        "m72_bullet":{
+          "minecraft:spawn_entity": 
+          { 
+            "entities": [
+             {
+               "min_wait_time": 0,
+                "max_wait_time": 0,
+                 "single_use": true,
+                  "spawn_entity": "addon:m72_missle",
+                   "num_to_spawn": 1 
+                 },
+                 {
+                   "min_wait_time": 0,
+                    "max_wait_time": 0,
+                     "single_use": true,
+                      "spawn_entity": "addon:rpg7_soplo",
+                       "num_to_spawn": 1 
+                     }
+               ]
+            }
+          },
+          "rpoa_bullet":{
+            "minecraft:spawn_entity": 
+            { 
+              "entities": [
+               {
+                 "min_wait_time": 0,
+                  "max_wait_time": 0,
+                   "single_use": true,
+                    "spawn_entity": "addon:rpoa_vistrel",
+                     "num_to_spawn": 1 
+                   },
+                   {
+                     "min_wait_time": 0,
+                      "max_wait_time": 0,
+                       "single_use": true,
+                        "spawn_entity": "addon:rpg7_soplo",
+                         "num_to_spawn": 1 
+                       }
+                 ]
+              }
+            },
+            "12.7x108_bullet":{
+              "minecraft:spawn_entity": 
+              { 
+                "entities": [
+                 {
+                   "min_wait_time": 0,
+                    "max_wait_time": 0,
+                     "single_use": true,
+                      "spawn_entity": "addon:12.7x108_bullet",
+                       "num_to_spawn": 1 
+                     }
+                   ]
+                }
+              },
+        "pg7vl_bullet":{
+          "minecraft:spawn_entity": 
+          { 
+            "entities": [
+             {
+               "min_wait_time": 0,
+                "max_wait_time": 0,
+                 "single_use": true,
+                  "spawn_entity": "addon:pg7vl_b",
+                   "num_to_spawn": 1 
+                 },
+                 {
+                   "min_wait_time": 0,
+                    "max_wait_time": 0,
+                     "single_use": true,
+                      "spawn_entity": "addon:rpg7_soplo",
+                       "num_to_spawn": 1 
+                     }
+               ]
+            }
+          },
+          "9x39_bullet":{
+           "minecraft:spawn_entity": 
+           { 
+             "entities": [
+              {
+                "min_wait_time": 0,
+                 "max_wait_time": 0,
+                  "single_use": true,
+                   "spawn_entity": "addon:9x39_bullet",
+                    "num_to_spawn": 1 
+                  }
+                ]
+             }
+           },
+       "5.45x39_bullet":{
+        "minecraft:spawn_entity": 
+        { 
+          "entities": [
+           {
+             "min_wait_time": 0,
+              "max_wait_time": 0,
+               "single_use": true,
+                "spawn_entity": "addon:5.45x39_bullet",
+                 "num_to_spawn": 1 
+               }
+             ]
+          }
+        },
+        "7.62x54_bullet":{
+         "minecraft:spawn_entity": 
+         { 
+           "entities": [
+            {
+              "min_wait_time": 0,
+               "max_wait_time": 0,
+                "single_use": true,
+                 "spawn_entity": "addon:7.62x54_bullet",
+                  "num_to_spawn": 1 
+                }
+              ]
+           }
+         },
+        "7.62x54_bullet_mg_crawl":{
+         "minecraft:spawn_entity": 
+         { 
+           "entities": [
+            {
+              "min_wait_time": 0,
+               "max_wait_time": 0,
+                "single_use": true,
+                 "spawn_entity": "addon:7.62x54_bullet_mg_crawl",
+                  "num_to_spawn": 1 
+                }
+              ]
+           }
+         },
+        "7.62x54_bullet_mg":{
+         "minecraft:spawn_entity": 
+         { 
+           "entities": [
+            {
+              "min_wait_time": 0,
+               "max_wait_time": 0,
+                "single_use": true,
+                 "spawn_entity": "addon:7.62x54_bullet_mg",
+                  "num_to_spawn": 1 
+                }
+              ]
+           }
+         },
+         "7.62x54_bullet_mg_crawl_trasser":{
+          "minecraft:spawn_entity": 
+          { 
+            "entities": [
+             {
+               "min_wait_time": 0,
+                "max_wait_time": 0,
+                 "single_use": true,
+                  "spawn_entity": "addon:7.62x54_bullet_mg_crawl_trasser",
+                   "num_to_spawn": 1 
+                 }
+               ]
+            }
+          },
+         "7.62x54_bullet_mg_trasser":{
+          "minecraft:spawn_entity": 
+          { 
+            "entities": [
+             {
+               "min_wait_time": 0,
+                "max_wait_time": 0,
+                 "single_use": true,
+                  "spawn_entity": "addon:7.62x54_bullet_mg_trasser",
+                   "num_to_spawn": 1 
+                 }
+               ]
+            }
+          },
+         "5.45x39_krovotek_bullet":{
+          "minecraft:spawn_entity": 
+          { 
+            "entities": [
+             {
+               "min_wait_time": 0,
+                "max_wait_time": 0,
+                 "single_use": true,
+                  "spawn_entity": "addon:5.45x39_bullet",
+                   "num_to_spawn": 1 
+                   }
+                 ]
+               }
+           },
+	   
+	   
+	   
+	   
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      },
+            "on": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                }
+            },
+            "off": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "move": {
+                "minecraft:mark_variant": {
+                    "value": 2
+                }
+            }
+    },
+
+    "components": {
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:npc": {
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [{
+          "cause": "fall",
+          "deals_damage": true
+        },
+        {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "operator": "==",
+                    "value": "bullet"
+                  }
+                ]
+              },
+              "deals_damage": true
+            },
+            "cause": "projectile",
+            "damage_multiplier": 0.1
+          }]
+      },
+      "minecraft:health": {
+        "value": 35,
+        "max": 35
+      },
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:type_family": {
+        "family": [ "player" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {  "test": "is_family", "subject": "other", "value": "bullet" },
+            "cause": "magic",
+            "damage_per_tick": 2000
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:player.saturation": {
+        "value": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 4
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": false,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "scope"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [0.45, 0, 0.6],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 150.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+					{
+						"event": "minecraft:become_standard_player",
+						"target": "self"
+					},
+		{
+          "filters": {
+            "all_of": [
+              {
+                "test": "has_mob_effect",
+                "subject": "self",
+                "value": "bad_omen"
+              },
+              {
+                "test": "is_in_village",
+                "subject": "self",
+                "value": true
+              }
+            ]
+          },
+          "event": "minecraft:trigger_raid"
+        },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_sneaking",
+                                    "subject": "self"
+                                }
+                            ]
+                        },
+                        "event": "sneak"
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_sneaking",
+                                    "subject": "self",
+                                    "operator": "!="
+                                }
+                            ]
+                        },
+                        "event": "stand"
+                    }
+                ]
+      }
+    },
+
+    "events": {
+			"minecraft:become_standard_player": {
+				"add": { "component_groups": ["minecraft:standard_player"] }
+			},
+      "gun:full": {"set_property":  {"addon:gun": 0}},
+      "gun:empty": {"set_property":  {"addon:gun": 1}},
+      "gun:reload": {"set_property":  {"addon:gun": 2}},
+      "gun:reload2": {"set_property":  {"addon:gun": 3}},
+      "gun:zatvor": {"set_property":  {"addon:gun": 4}},
+      "gun:zatvor2": {"set_property":  {"addon:gun": 5}},
+
+      "rpg7:empty": {"set_property":  {"addon:rpg7": 0}},
+      "rpg7:pg7vl": {"set_property":  {"addon:rpg7": 1}},
+      "rpg7:pg7vr": {"set_property":  {"addon:rpg7": 2}},
+      "rpg7:tbg7v": {"set_property":  {"addon:rpg7": 3}},
+
+      "bmp3": {"set_property":  {"vehicle:bmp3": 1}},
+      "unbmp3": {"set_property":  {"vehicle:bmp3": 0}},
+
+      "2a72_fire": {"set_property":  {"2a72:fire": 1}},
+      "2a72_unfire": {"set_property":  {"2a72:fire": 0}},
+      
+      "2a70_fire": {"set_property":  {"2a70:fire": 1}},
+      "2a70_unfire": {"set_property":  {"2a70:fire": 0}},
+      
+      "akms_gp25_ungl": {"set_property":  {"akms:gp25": 0}},
+      "akms_gp25_gl": {"set_property": {"akms:gp25": 1 }},
+      "akms_gp25_ungl2": {"set_property":  {"akms:gp25": 4}},
+      "akms_gp25_gl2": {"set_property": {"akms:gp25": 3 }},
+      "akms_gp25_gl_reload": {"set_property": {"akms:gp25": 2 }},
+      
+      "ak74_gp25_ungl": {"set_property":  {"ak74:gp25": 0}},
+      "ak74_gp25_gl": {"set_property": {"ak74:gp25": 1 }},
+      "ak74_gp25_ungl2": {"set_property":  {"ak74:gp25": 4}},
+      "ak74_gp25_gl2": {"set_property": {"ak74:gp25": 3 }},
+      "ak74_gp25_gl_reload": {"set_property": {"ak74:gp25": 2 }},
+      
+      "aks74_gp25_ungl": {"set_property":  {"aks74:gp25": 0}},
+      "aks74_gp25_gl": {"set_property": {"aks74:gp25": 1 }},
+      "aks74_gp25_ungl2": {"set_property":  {"aks74:gp25": 4}},
+      "aks74_gp25_gl2": {"set_property": {"aks74:gp25": 3 }},
+      "aks74_gp25_gl_reload": {"set_property": {"aks74:gp25": 2 }},
+
+      "ak74m_zenit_gp25_ungl": {"set_property":  {"ak74m_zenit:gp25": 0}},
+      "ak74m_zenit_gp25_gl": {"set_property": {"ak74m_zenit:gp25": 1 }},
+      "ak74m_zenit_gp25_ungl2": {"set_property":  {"ak74m_zenit:gp25": 4}},
+      "ak74m_zenit_gp25_gl2": {"set_property": {"ak74m_zenit:gp25": 3 }},
+      "ak74m_zenit_gp25_gl_reload": {"set_property": {"ak74m_zenit:gp25": 2 }},
+      
+      "ak74m_gp25_ungl": {"set_property":  {"ak74m:gp25": 0}},
+      "ak74m_gp25_gl": {"set_property": {"ak74m:gp25": 1 }},
+      "ak74m_gp25_ungl2": {"set_property":  {"ak74m:gp25": 4}},
+      "ak74m_gp25_gl2": {"set_property": {"ak74m:gp25": 3 }},
+      "ak74m_gp25_gl_reload": {"set_property": {"ak74m:gp25": 2 }},
+      
+      "ak12_gp25_ungl": {"set_property":  {"ak12:gp25": 0}},
+      "ak12_gp25_gl": {"set_property": {"ak12:gp25": 1 }},
+      "ak12_gp25_ungl2": {"set_property":  {"ak12:gp25": 4}},
+      "ak12_gp25_gl2": {"set_property": {"ak12:gp25": 3 }},
+      "ak12_gp25_gl_reload": {"set_property": {"ak12:gp25": 2 }},
+      
+      "m4a1_m203_ungl": {"set_property":  {"m4a1:m203": 0}},
+      "m4a1_m203_gl": {"set_property": {"m4a1:m203": 1 }},
+      "m4a1_m203_ungl2": {"set_property":  {"m4a1:m203": 4}},
+      "m4a1_m203_gl2": {"set_property": {"m4a1:m203": 3 }},
+      "m4a1_m203_gl_reload": {"set_property": {"m4a1:m203": 2 }},
+      
+      "m16a4_m203_ungl": {"set_property":  {"m16a4:m203": 0}},
+      "m16a4_m203_gl": {"set_property": {"m16a4:m203": 1 }},
+      "m16a4_m203_ungl2": {"set_property":  {"m16a4:m203": 4}},
+      "m16a4_m203_gl2": {"set_property": {"m16a4:m203": 3 }},
+      "m16a4_m203_gl_reload": {"set_property": {"m16a4:m203": 2 }},
+
+      "m16a1_m203_ungl": {"set_property":  {"m16a1:m203": 0}},
+      "m16a1_m203_gl": {"set_property": {"m16a1:m203": 1 }},
+      "m16a1_m203_ungl2": {"set_property":  {"m16a1:m203": 4}},
+      "m16a1_m203_gl2": {"set_property": {"m16a1:m203": 3 }},
+      "m16a1_m203_gl_reload": {"set_property": {"m16a1:m203": 2 }},
+
+      "m16a2_m203_ungl": {"set_property":  {"m16a2:m203": 0}},
+      "m16a2_m203_gl": {"set_property": {"m16a2:m203": 1 }},
+      "m16a2_m203_ungl2": {"set_property":  {"m16a2:m203": 4}},
+      "m16a2_m203_gl2": {"set_property": {"m16a2:m203": 3 }},
+      "m16a2_m203_gl_reload": {"set_property": {"m16a2:m203": 2 }},
+      
+      "m16_m203_ungl": {"set_property":  {"m16:m203": 0}},
+      "m16_m203_gl": {"set_property": {"m16:m203": 1 }},
+      "m16_m203_ungl2": {"set_property":  {"m16:m203": 4}},
+      "m16_m203_gl2": {"set_property": {"m16:m203": 3 }},
+      "m16_m203_gl_reload": {"set_property": {"m16:m203": 2 }},
+
+
+      "unfire": { "set_property":  {"gun:fire": 0 }},
+
+     "rgd5": {
+       "add": {"component_groups": ["rgd5"]}
+      },
+       "m67": {
+        "add": {"component_groups": ["m67"]}
+      },
+     "vog25_bullet": {
+       "add": {"component_groups": ["vog25_bullet"]}
+       },
+       "m406_bullet": {
+        "add": {"component_groups": ["m406_bullet"]}
+         },
+         "12.7x108_bullet": {
+          "add": {"component_groups": ["12.7x108_bullet"]}
+           },
+           "pg7vl_bullet": {
+            "add": {"component_groups": ["pg7vl_bullet"]}
+             },
+         "m72_bullet": {
+          "add": {"component_groups": ["m72_bullet"]}
+           },
+       "9x39_bullet": {
+         "sequence": [
+             {"set_property": { "gun:fire": 1 }},
+             {"add": {"component_groups": ["9x39_bullet"]}}
+         ]
+         },
+        "5.45x39_bullet": {
+          "sequence": [
+              {"set_property": { "gun:fire": 1 }},
+              {"add": {"component_groups": ["5.45x39_bullet"]}}
+          ]
+          },
+          "7.62x54_bullet": {
+            "sequence": [
+                {"set_property": { "gun:fire": 1 }},
+                {"add": {"component_groups": ["7.62x54_bullet"]}}
+            ]
+            },
+
+                "pkm_reload": {
+              "set_property": { "pkm:ammo": "v.pkm_ammo" }
+                  },
+              "7.62x54_bullet_pkm": {
+                "sequence": [
+                  { "set_property": { "pkm:ammo": "v.pkm_ammo" }},
+                    {"set_property": { "gun:fire": 1 }},
+                    {"add": {"component_groups": ["7.62x54_bullet_mg"]}}
+                ]
+                },
+                "7.62x54_bullet_pkm_trasser": {
+                  "sequence": [
+                    { "set_property": { "pkm:ammo": "v.pkm_ammo" }},
+                      {"set_property": { "gun:fire": 1 }},
+                      {"add": {"component_groups": ["7.62x54_bullet_mg_trasser"]}}
+                  ]
+                  },
+
+            "pkp_reload": {
+          "set_property": { "pkp:ammo": "v.pkp_ammo" }
+              },
+              "7.62x54_bullet_pkp": {
+                "sequence": [
+                  { "set_property": { "pkp:ammo": "v.pkp_ammo" }},
+                    {"set_property": { "gun:fire": 1 }},
+                    {"add": {"component_groups": ["7.62x54_bullet_mg"]}}
+                ]
+                },
+                "7.62x54_bullet_pkp_trasser": {
+                  "sequence": [
+                    { "set_property": { "pkp:ammo": "v.pkp_ammo" }},
+                      {"set_property": { "gun:fire": 1 }},
+                      {"add": {"component_groups": ["7.62x54_bullet_mg_trasser"]}}
+                  ]
+                  },
+
+                  "pkp_zenit_reload": {
+                "set_property": { "pkp:ammo": "v.pkp_zenit_ammo" }
+                    },
+                    "7.62x54_bullet_pkp_zenit": {
+                      "sequence": [
+                        { "set_property": { "pkp_zenit:ammo": "v.pkp_zenit_ammo" }},
+                          {"set_property": { "gun:fire": 1 }},
+                          {"add": {"component_groups": ["7.62x54_bullet_mg"]}}
+                      ]
+                      },
+                      "7.62x54_bullet_pkp_zenit_trasser": {
+                        "sequence": [
+                          { "set_property": { "pkp_zenit:ammo": "v.pkp_zenit_ammo" }},
+                            {"set_property": { "gun:fire": 1 }},
+                            {"add": {"component_groups": ["7.62x54_bullet_mg_trasser"]}}
+                        ]
+                        },
+                        
+            "m240b_reload": {
+              "set_property": { "m240b:ammo": "v.m240b_ammo" }
+              },
+                "7.62x54_bullet_m240b": {
+                  "sequence": [
+                    {"set_property": { "m240b:ammo": "v.m240b_ammo" }},
+                      {"set_property": { "gun:fire": 1 }},
+                      {"add": {"component_groups": ["7.62x54_bullet_mg"]}
+                      }
+                  ]
+                  },
+
+            "m249_reload": {
+          "set_property": { "m249:ammo": "v.m249_ammo" }
+              },
+            "5.45x39_bullet_m249": {
+              "sequence": [
+                {"set_property": { "m249:ammo": "v.m249_ammo" }},
+                  {"set_property": { "gun:fire": 1 }},
+                  {"add": {"component_groups": ["5.45x39_bullet"]}}
+              ]
+              },
+
+              "m249pip_reload": {
+            "set_property": { "m249pip:ammo": "v.m249pip_ammo" }
+                },
+              "5.45x39_bullet_m249pip": {
+                "sequence": [
+                  {"set_property": { "m249pip:ammo": "v.m249pip_ammo" }},
+                    {"set_property": { "gun:fire": 1 }},
+                    {"add": {"component_groups": ["5.45x39_bullet"]}}
+                ]
+                },
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+            "on": {
+                "add": {
+                    "component_groups": [
+                        "on"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "move"
+                    ]
+                }
+            },
+            "move": {
+                "add": {
+                    "component_groups": [
+                        "move"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "on",
+                        "off"
+                    ]
+                }
+            },
+            "off": {
+                "add": {
+                    "component_groups": [
+                        "off"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "on",
+                        "move"
+                    ]
+                }
+            }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,91 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.m240b": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 1, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 2, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 3, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 4, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 5, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 6, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 7, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 8, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 9, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 10, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 11, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 12, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 13, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 14, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 15, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 16, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 17, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 18, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 19, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 20, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 21, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 22, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 23, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 24, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 25, 'addon:m240b_mag') || query.is_item_name_any('slot.inventory', 26, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 0, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 1, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 2, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 3, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 4, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 5, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 6, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 7, 'addon:m240b_mag') || query.is_item_name_any('slot.hotbar', 8, 'addon:m240b_mag');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 1, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 2, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 3, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 4, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 5, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 6, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 7, 'addon:m240b') || query.is_item_name_any('slot.hotbar', 8, 'addon:m240b');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','m240b') && q.is_using_item && query.all_animations_finished"
+                      },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','m240b') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','m240b') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:m240b_mag') && q.scoreboard('m240b') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         }
+                  ]
+              },
+          "shoot": {
+          "animations": ["m240bfire"],
+          "transitions": [
+              {
+                "unfire": "q.all_animations_finished"
+              }
+                 ]
+              },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["m240breload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+          "reload": {
+          "animations": ["m240breload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','m240b')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','m240b')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      }
+  }
+}

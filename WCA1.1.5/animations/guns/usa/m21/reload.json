@@ -1,0 +1,21 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m21reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.251,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "3.25": [  "/event entity @s gun:full", "/clear @s addon:m21_mag 0 1", "/give @s addon:m21_mag_empty", "/scoreboard players set @s m21 1" ]
+            }
+        },
+        "animation.m21reload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.8751,
+            "timeline": {
+                  "0.0": ["/replaceitem entity @s slot.weapon.mainhand 0 addon:m21", "/event entity @s gun:reload2"],
+                  "1.875": [  "/clear @s addon:m21 0 1", "/function m21reload", "/scoreboard players set @s m21 0", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

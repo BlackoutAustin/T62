@@ -1,0 +1,13 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m1151_m2hb_reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.01,
+            "timeline": {
+                  "0.0": "/effect @e[type=addon:m1151_turret,c=1] invisibility 0 1 true",
+                  "5": [  "/event entity @s m1151_reload_finish", "/scoreboard players set @s m1151_m2hb 0", "/clear @p addon:m1151_m2hb_mag" ]
+            }
+        }
+    }
+}

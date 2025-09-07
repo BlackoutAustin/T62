@@ -1,0 +1,29 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.ak74mreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.251,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "3.25": [  "/event entity @s gun:full", "/clear @s addon:ak74_mag 0 1", "/give @s addon:ak74_mag_empty", "/scoreboard players set @s ak74m 1" ]
+            }
+        },
+        "animation.ak74mreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.8751,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s[hasitem={item=addon:ak74m}] slot.weapon.mainhand 0 addon:ak74m", "/replaceitem entity @s[hasitem={item=addon:ak74m_gp25}] slot.weapon.mainhand 0 addon:ak74m_gp25", "/replaceitem entity @s[hasitem={item=addon:ak74m_hexagon}] slot.weapon.mainhand 0 addon:ak74m_hexagon","/event entity @s gun:reload2"],
+                  "1.875": [ "/clear @s addon:ak74m 0 1", "/clear @s addon:ak74m_gp25 0 1", "/clear @s addon:ak74m_hexagon 0 1","/function ak74mreload", "/scoreboard players set @s ak74m 0", "/event entity @s gun:full" ]
+            }
+        },
+        "animation.gp25_ak74m_reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.54171,
+            "timeline": {
+                  "0.0": [ "@s ak74m_gp25_gl_reload"],
+                  "1.54169": [  "@s ak74m_gp25_gl2","/clear @s addon:vog25 0 1" ]
+            }
+        }
+    }
+}

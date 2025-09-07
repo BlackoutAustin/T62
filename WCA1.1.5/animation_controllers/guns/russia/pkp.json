@@ -1,0 +1,107 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.pkp": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.trasser = query.scoreboard('pkp') > 90 || query.scoreboard('pkp') > 4 && query.scoreboard('pkp') < 7 || query.scoreboard('pkp') > 9 && query.scoreboard('pkp') < 12 || query.scoreboard('pkp') > 14 && query.scoreboard('pkp') < 17 || query.scoreboard('pkp') > 19 && query.scoreboard('pkp') < 22 || query.scoreboard('pkp') > 24 && query.scoreboard('pkp') < 27 || query.scoreboard('pkp') > 29 && query.scoreboard('pkp') < 32 || query.scoreboard('pkp') > 34 && query.scoreboard('pkp') < 37 || query.scoreboard('pkp') > 39 && query.scoreboard('pkp') < 42 || query.scoreboard('pkp') > 44 && query.scoreboard('pkp') < 47 || query.scoreboard('pkp') > 49 && query.scoreboard('pkp') < 52 || query.scoreboard('pkp') > 54 && query.scoreboard('pkp') < 57 || query.scoreboard('pkp') > 59 && query.scoreboard('pkp') < 62 || query.scoreboard('pkp') > 64 && query.scoreboard('pkp') < 67 || query.scoreboard('pkp') > 69 && query.scoreboard('pkp') < 72 || query.scoreboard('pkp') > 74 && query.scoreboard('pkp') < 77 || query.scoreboard('pkp') > 79 && query.scoreboard('pkp') < 82 || query.scoreboard('pkp') > 84 && query.scoreboard('pkp') < 87;",
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 1, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 2, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 3, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 4, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 5, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 6, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 7, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 8, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 9, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 10, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 11, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 12, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 13, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 14, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 15, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 16, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 17, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 18, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 19, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 20, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 21, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 22, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 23, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 24, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 25, 'addon:pkm_mag') || query.is_item_name_any('slot.inventory', 26, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 0, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 1, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 2, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 3, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 4, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 5, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 6, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 7, 'addon:pkm_mag') || query.is_item_name_any('slot.hotbar', 8, 'addon:pkm_mag');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 1, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 2, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 3, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 4, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 5, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 6, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 7, 'addon:pkp') || query.is_item_name_any('slot.hotbar', 8, 'addon:pkp');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp') && q.is_using_item && query.all_animations_finished && !v.trasser"
+                      },
+                      {
+           "shoot2": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp') && q.is_using_item && query.all_animations_finished && v.trasser"
+                       },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','pkp') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','pkp') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:pkm_mag') && q.scoreboard('pkp') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         }
+                  ]
+              },
+          "shoot": {
+          "animations": [
+            "pkpfire"
+          ],
+          "transitions": [
+              {
+                "unfire": "q.all_animations_finished"
+              }
+                 ]
+              },
+              "shoot2": {
+              "animations": [
+                "pkpfire2"
+              ],
+              "transitions": [
+                  {
+                    "unfire": "q.all_animations_finished"
+                  }
+                     ]
+                  },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["pkpreload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+          "reload": {
+          "animations": ["pkpreload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','pkp')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','pkp')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      }
+  }
+}

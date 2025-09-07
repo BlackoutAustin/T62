@@ -1,0 +1,48 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:ak74m_hexagon_reload",
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.woolCarpet",
+        "is_hidden_in_commands": false
+      }
+    },
+    "components": {
+      "minecraft:tags":{
+          "tags":[
+              "gun",
+              "ak74m",
+              "reload",
+              "empty",
+              "hexagon"
+            ]
+              },
+    "minecraft:display_name": {
+        "value": "§cAK-74M empty\n§25.45×39 AK magazine\n§fHexagon\n§fRussia"
+        },
+      "minecraft:stacked_by_data": true,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:use_modifiers": {
+        "movement_modifier": 1,
+        "use_duration": 99999
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 0
+      },
+      "minecraft:icon": {
+        "texture": "ak74m_hexagon"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:creative_category": {
+        "parent": "commands"
+      }
+    }
+  }
+}

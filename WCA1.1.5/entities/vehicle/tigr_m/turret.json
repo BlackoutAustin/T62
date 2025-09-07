@@ -1,0 +1,76 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:tigr_m_turret",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tigr_m:kord": {
+          "type": "int",
+          "range": [0, 1],
+          "default": 0,
+          "client_sync": true
+        }
+      },
+      "scripts": {
+        "animate": [
+          "uaz"
+        ]
+      },
+      "animations": {
+        "uaz": "controller.animation.tigr_m_turret",
+        "tigr_m_kord_reload": "animation.tigr_m_kord_reload"
+      }
+    },
+	  "component_groups": {
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+          "triggers": {
+              "cause": "all",
+              "deals_damage": false
+          }
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "interact_text": "Drive",
+        "seats": [
+          {
+            "position": [0, -0.5, 0]
+           }
+        ]
+
+      },
+      "minecraft:type_family": {
+        "family": [ "vehicle","vehicle_immunity","tigr_m" ]
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true,
+        "totalSupply": 0,
+        "suffocateTime": 0
+      },
+  "minecraft:scale": {
+        "value": 1.0
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+},
+        "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:input_ground_controlled": {
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      }
+    },
+	  "events": {
+      "tigr_m_reload": {"set_property":  {"tigr_m:kord": 1}},
+      "tigr_m_reload_finish": {"set_property":  {"tigr_m:kord": 0}}
+    }
+  }
+}

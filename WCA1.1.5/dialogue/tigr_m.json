@@ -1,0 +1,32 @@
+{
+   "format_version": "1.17.20",
+   "minecraft:npc_dialogue": {
+      "scenes": [
+         {
+            "scene_tag": "tigr_m_start",
+            "npc_name": "GAZ ASN 233115 Tiger-M",
+            "text": "",
+            "buttons": [
+               {
+                  "name": "Driver",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:tigr_m,r=5,c=1]"
+                  ]
+               },
+               {
+                  "name": "Machinegunner",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:tigr_m_turret,r=5,c=1]"
+                  ]
+               },
+               {
+                  "name": "Passenger",
+                  "commands": [
+                     "/ride @s start_riding @e[type=addon:tigr_m_pass,r=5,c=1]"
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

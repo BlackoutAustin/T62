@@ -1,0 +1,91 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.aks74u": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+            "on_entry": [
+              "variable.ammo = query.is_item_name_any('slot.inventory', 0, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 1, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 2, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 3, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 4, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 5, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 6, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 7, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 8, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 9, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 10, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 11, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 12, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 13, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 14, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 15, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 16, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 17, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 18, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 19, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 20, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 21, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 22, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 23, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 24, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 25, 'addon:ak74_mag') || query.is_item_name_any('slot.inventory', 26, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 0, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 1, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 2, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 3, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 4, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 5, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 6, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 7, 'addon:ak74_mag') || query.is_item_name_any('slot.hotbar', 8, 'addon:ak74_mag');",
+              "variable.ammo2 = query.is_item_name_any('slot.hotbar', 0, 'addon:ak74') || query.is_item_name_any('slot.hotbar', 1, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 2, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 3, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 4, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 5, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 6, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 7, 'addon:aks74u') || query.is_item_name_any('slot.hotbar', 8, 'addon:aks74u');"
+            ],
+          "transitions": [
+                     {
+          "shoot": "q.property('addon:gun') == 0 && query.equipped_item_any_tag('slot.weapon.mainhand','aks74u') && q.is_using_item && query.all_animations_finished"
+                      },
+                      {
+           "unfire": "query.equipped_item_any_tag('slot.weapon.mainhand','aks74u') && !q.is_using_item && query.all_animations_finished"
+                       },
+                       {
+            "reload": "q.property('addon:gun') == 1 && query.equipped_item_any_tag('slot.weapon.mainhand','aks74u') && q.is_using_item && query.all_animations_finished && v.ammo"
+                        },
+                        {
+             "reload2": "query.is_item_name_any('slot.weapon.mainhand', 1, 'addon:ak74_mag') && q.scoreboard('aks74u') != 0 && q.is_using_item && query.all_animations_finished && v.ammo2"
+                         }
+                  ]
+              },
+          "shoot": {
+          "animations": ["aks74ufire"],
+          "transitions": [
+              {
+                "unfire": "q.all_animations_finished"
+              }
+                 ]
+              },
+              "unfire": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                  "@s unfire"
+                ]
+              },
+              "reload2": {
+              "animations": ["aks74ureload2"],
+              "transitions": [
+                        {
+              "default":"q.all_animations_finished"
+              }
+                     ]
+                  },
+          "reload": {
+          "animations": ["aks74ureload"],
+          "transitions": [
+              {
+    "unreload":"q.property('addon:gun') != 2 && !query.equipped_item_any_tag('slot.weapon.mainhand','aks74u')"
+    },
+              {
+    "unreload":"!query.equipped_item_any_tag('slot.weapon.mainhand','aks74u')"
+    },
+                    {
+          "default":"q.all_animations_finished"
+          }
+                 ]
+              },
+              "unreload": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "@s gun:empty"
+                ]
+              },
+              "hold_empty": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s actionbar §cEmpty"
+                ]
+              }
+          }
+      }
+  }
+}

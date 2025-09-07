@@ -1,0 +1,19 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m249fire": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.m249_ammo = q.scoreboard('m249');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 5.45x39_bullet_m249", "/playanimation @s animation.m249_shoot", "/playsound addon.m249 @a ^^^0.10 200 1", "/function m249", "/function m249_hold" ]
+            }
+        },
+        "animation.m249fire_crawl": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 0.00,
+            "timeline": {
+                  "0.0": ["v.m249_ammo = q.scoreboard('m249');", "/function svet", "/camerashake add @s 0.1 0.1 rotational", "@s 5.45x39_bullet_m249_crawl", "/playanimation @s animation.m249_shoot", "/playsound addon.m249 @a ^^^0.10 200 1", "/function m249", "/function m249_hold" ]
+            }
+        }
+    }
+}

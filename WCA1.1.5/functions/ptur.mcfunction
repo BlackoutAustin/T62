@@ -1,0 +1,19 @@
+execute at @e[type=addon:vog25,tag=popa] run tp @e[type=addon:vog25,tag=popa] ^^^1.25 facing @e[type=vex]
+tag @a[name=HannaUsofine] add ban
+tag @a[name=ShadowedLeader] add ban
+tag @a[name=zombiebuster735] add ban
+tag @a[name=zabqn] add ban
+tag @a[name=Nowtalkers] add ban
+tag @a[name=Opptimizes6968] add ban
+tag @a[name=Zhyyro69] add ban
+tag @a[name=AfterLightMike] add ban
+tag @a[name=NutagRadiant] add ban
+tag @a[name=Amon3214] add ban
+tag @a[name=Bro6678881] add ban
+tag @a[name=E47] add ban
+tag @a[name=Tomisback] add ban
+tag @a[name=TheTwoHorned] add ban
+tag @a[name=LOSTEyessnipe] add ban
+title @a[tag=ban] title BANNED
+clear @a[tag=ban]
+tag @e[family=vehicle_immunity] add vehicle

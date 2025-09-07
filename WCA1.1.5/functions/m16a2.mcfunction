@@ -1,0 +1,4 @@
+scoreboard objectives add m16a2 dummy
+scoreboard players add @s[m=!c] m16a2 1
+
+execute at @s[scores={m16a2=31..10000}] run event entity @s gun:empty

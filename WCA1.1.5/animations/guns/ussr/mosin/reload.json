@@ -1,0 +1,28 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.mosinreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 6.95831,
+            "timeline": {
+                  "6.9581": [  "/event entity @s gun:full", "/clear @s addon:ammo7.62x54 0 5", "/give @s addon:mosin_mag_empty", "/scoreboard players set @s mosin 0" ]
+            }
+        },
+        "animation.mosinzatvor": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.20831,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:zatvor2"],
+                  "1.2083": [  "/event entity @s gun:full" ]
+            }
+        },
+        "animation.mosinreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.29171,
+            "timeline": {
+                  "0.0": ["/replaceitem entity @s slot.weapon.mainhand 0 addon:mosin", "/event entity @s gun:reload2"],
+                  "3.2917": [  "/clear @s addon:mosin 0 1", "/function mosinreload", "/scoreboard players set @s mosin 0", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m240breload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.51,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload", "/scoreboard players set @s m240b 1","v.m240b_ammo = q.scoreboard('m240b');", "@s m240b_reload"],
+                  "5.5": [  "/event entity @s gun:full", "/clear @s addon:m240b_mag 0 1", "/give @s addon:m240b_mag_empty", "/scoreboard players set @s m240b 1","v.m240b_ammo = q.scoreboard('m240b');", "@s m240b_reload" ]
+            }
+        },
+        "animation.m240breload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.1251,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s slot.weapon.mainhand 0 addon:m240b","/event entity @s gun:reload2"],
+                  "3.0": [  "/function m240breload", "/scoreboard players set @s m240b 0","v.m240b_ammo = q.scoreboard('m240b');", "@s m240b_reload"],
+                  "5.125": [  "/clear @s addon:m240b 0 1", "v.m240b_ammo = q.scoreboard('m240b');", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

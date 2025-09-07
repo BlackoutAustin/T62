@@ -1,0 +1,411 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.aim": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+            {
+            "aim": "query.equipped_item_any_tag('slot.weapon.mainhand','gun') && !query.equipped_item_any_tag('slot.weapon.mainhand','acog') && !query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && !query.equipped_item_any_tag('slot.weapon.mainhand','svd') && !query.equipped_item_any_tag('slot.weapon.mainhand','svds') && !query.equipped_item_any_tag('slot.weapon.mainhand','m21') && !query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+             },
+             {
+             "aim_acog": "query.equipped_item_any_tag('slot.weapon.mainhand','acog') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+              },
+              {
+              "aim_mosin": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') != 2  && q.property('addon:gun') != 3 && q.property('addon:gun') != 5 && q.is_sneaking && !q.is_riding"
+               },
+            {
+            "aim_svd": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+             },
+             {
+             "aim_svds": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+              },
+             {
+             "aim_vss": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+              },
+             {
+             "aim_m21": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+              },
+              {
+              "aim_m110": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking && !q.is_riding"
+               },
+              {
+              "aim_svd_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+               },
+               {
+               "aim_mosin_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.is_riding && q.property('addon:gun') != 2 && q.property('addon:gun') != 3 && q.property('addon:gun') != 5"
+                },
+               {
+               "aim_svds_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                },
+               {
+               "aim_vss_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                },
+               {
+               "aim_m21_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                },
+                {
+                "aim_m110_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                 }
+                  ]
+              },
+              "aim": {
+              "on_entry": [
+                "/effect @s slowness 1111 3 true"
+              ],
+                "transitions": [
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','acog') || query.equipped_item_any_tag('slot.weapon.mainhand','svd') || query.equipped_item_any_tag('slot.weapon.mainhand','svds') || query.equipped_item_any_tag('slot.weapon.mainhand','m21') || query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','gun')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','gun') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','gun') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_mosin_riding": {
+              "on_entry": [
+                "/title @s title hud.mosin_scope",
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_mosin_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.is_riding && q.property('addon:gun') != 2 && && q.property('addon:gun') != 3 && q.property('addon:gun') != 5"
+                   },
+                  {
+                    "unaim": "!q.is_riding"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') == 3"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') == 5"
+                  }
+                ]
+              },
+              "aim_svd_riding": {
+              "on_entry": [
+                "/title @s title hud.svd_scope",
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_svd_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                   },
+                  {
+                    "unaim": "!q.is_riding"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','svd')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_svds_riding": {
+              "on_entry": [
+                "/title @s title hud.svds_scope",
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_svds_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                   },
+                  {
+                    "unaim": "!q.is_riding"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','svds')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_vss_riding": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_vss_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                   },
+                  {
+                    "unaim": "!q.is_riding"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','vss')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_m21_riding": {
+              "on_entry": [
+                "/title @s title hud.m21_scope",
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_m21_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                   },
+                  {
+                    "unaim": "!q.is_riding"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','m21')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_m110_riding": {
+              "on_entry": [
+                "/title @s title hud.m110_scope",
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_m110_riding": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.is_riding && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3"
+                   },
+                  {
+                    "unaim": "!q.is_riding"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_acog": {
+              "on_entry": [
+                "/effect @s slowness 1111111 7 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_acog": "query.equipped_item_any_tag('slot.weapon.mainhand','acog') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','acog')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','acog') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','acog') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_mosin": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_mosin": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.property('addon:gun') != 5 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','mosin')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') == 3"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','mosin') && q.property('addon:gun') == 5"
+                  }
+                ]
+              },
+              "aim_svd": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_svd": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','svd')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svd') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_svds": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_svds": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','svds')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','svds') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_vss": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_vss": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','vss')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','vss') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_m21": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_m21": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','m21')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m21') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "aim_m110": {
+              "on_entry": [
+                "/effect @s slowness 1111111 8 true"
+              ],
+                "transitions": [
+                  {
+                  "aim_m110": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') != 2 &&  q.property('addon:gun') != 3 && q.is_sneaking"
+                   },
+                  {
+                    "unaim": "!q.is_sneaking"
+                  },
+                  {
+                    "unaim": "!query.equipped_item_any_tag('slot.weapon.mainhand','m110')"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') == 2"
+                  },
+                  {
+                    "unaim": "query.equipped_item_any_tag('slot.weapon.mainhand','m110') && q.property('addon:gun') == 3"
+                  }
+                ]
+              },
+              "unaim": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/title @s title hud.empty",
+                  "/effect @s slowness 0 0 true"
+                ]
+              }
+          }
+      },
+        "controller.animation.testi2": {
+            "initial_state": "default",
+            "states": {
+            "default": {
+            "transitions": [
+                       {
+            "particle": "query.property('gun:fire') == 1"
+                        }
+                    ]
+                },
+            "particle": {
+                  "transitions": [
+                        {
+                          "default": "1.0"
+                        }
+                  ],
+                  "on_entry": [
+                    "/say pipiska"
+                  ]
+                }
+            }
+        }
+    }
+}

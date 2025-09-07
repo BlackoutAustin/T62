@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.rgd5": {
+            "initial_state": "setup",
+            "states": {
+              "setup": {
+                "transitions": [
+                  {
+                    "rgd5_use": "q.is_using_item && query.equipped_item_any_tag('slot.weapon.mainhand','rgd5')"
+                  }]
+              },
+              "rgd5_use": {
+                "animations": [
+                    "rgd5_use"
+                ],
+                "transitions": [
+                  {
+                    "setup": "!q.is_using_item && !q.any_animation_finished && query.equipped_item_any_tag('slot.weapon.mainhand','rgd5')"
+                  },
+                  {
+                    "rgd5_unuse": "!q.is_using_item && q.any_animation_finished && query.equipped_item_any_tag('slot.weapon.mainhand','rgd5')"
+                  }
+                ]
+              },
+              "rgd5_unuse": {
+                "animations": [
+                    "rgd5_unuse"
+                ],
+                "transitions": [
+                  {
+                    "setup": "q.any_animation_finished"
+                  }
+                ]
+              }
+            }
+          }
+    }
+}

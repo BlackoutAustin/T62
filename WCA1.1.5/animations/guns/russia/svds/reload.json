@@ -1,0 +1,21 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.svdsreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.251,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "3.25": [  "/event entity @s gun:full", "/clear @s addon:svd_mag 0 1", "/give @s addon:svd_mag_empty", "/scoreboard players set @s svds 1" ]
+            }
+        },
+        "animation.svdsreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.8751,
+            "timeline": {
+                  "0.0": ["/replaceitem entity @s slot.weapon.mainhand 0 addon:svds", "/event entity @s gun:reload2"],
+                  "1.875": [  "/clear @s addon:svds 0 1", "/function svdsreload", "/scoreboard players set @s svds 0", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.ai2use": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 4.8333311,
+            "timeline": {
+                    "0.0": [ "/camerashake add @s 0.01 4.3583 rotational" ],
+                  "4.83333": "/clear @s addon:ai2 0 1",
+                "4.833331": [ "/effect @s regeneration 45 2 true" ]
+            }
+        },
+        "animation.ifakuse": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 4.8333311,
+            "timeline": {
+                    "0.0": [ "/camerashake add @s 0.01 4.3583 rotational" ],
+                  "4.83333": "/clear @s addon:ifak 0 1",
+                "4.833331": [ "/effect @s regeneration 45 2 true" ]
+            }
+        },
+        "animation.aptechka": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 4.8751,
+            "timeline": {
+                "0.0": [ "/camerashake add @s 0.01 4.3583 rotational" ],
+              "4.875": "/clear @s addon:aptechka 0 1",
+            "4.8751": [ "/effect @s regeneration 45 2 true" ]
+        }
+        }
+    }
+}

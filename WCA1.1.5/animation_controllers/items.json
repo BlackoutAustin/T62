@@ -1,0 +1,73 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.ai2": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "reload": "query.is_item_name_any('slot.weapon.mainhand',0,'addon:ai2') && q.is_using_item"
+                        }
+                    ]
+                },
+                "reload": {
+                    "animations": [
+                        "ai2use"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        },
+                        {
+                            "unreload": "!query.is_item_name_any('slot.weapon.mainhand',0,'addon:ai2')"
+                        }
+                    ]
+                },
+                "unreload": {
+                    "on_entry": [
+                    ],
+                    "transitions": [
+                        {
+                            "default": "1.0"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.ifak": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "reload": "query.is_item_name_any('slot.weapon.mainhand',0,'addon:ifak') && q.is_using_item"
+                        }
+                    ]
+                },
+                "reload": {
+                    "animations": [
+                        "ifakuse"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        },
+                        {
+                            "unreload": "!query.is_item_name_any('slot.weapon.mainhand',0,'addon:ifak')"
+                        }
+                    ]
+                },
+                "unreload": {
+                    "on_entry": [
+                    ],
+                    "transitions": [
+                        {
+                            "default": "1.0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

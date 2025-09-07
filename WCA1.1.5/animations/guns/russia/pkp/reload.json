@@ -1,0 +1,22 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.pkpreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.51,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload", "/scoreboard players set @s pkp 1","v.pkp_ammo = q.scoreboard('pkp');", "@s pkp_reload"],
+                  "5.5": [  "/event entity @s gun:full", "/clear @s addon:pkm_mag 0 1", "/give @s addon:pkm_mag_empty", "/scoreboard players set @s pkp 1","v.pkp_ammo = q.scoreboard('pkp');", "@s pkp_reload" ]
+            }
+        },
+        "animation.pkpreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 6.20831,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s slot.weapon.mainhand 0 addon:pkp","/event entity @s gun:reload2"],
+                  "3.0": [  "/function pkpreload", "/scoreboard players set @s pkp 0","v.pkp_ammo = q.scoreboard('pkp');", "@s pkp_reload"],
+                  "6.2083": [  "/clear @s addon:pkp 0 1", "v.pkp_ammo = q.scoreboard('pkp');", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

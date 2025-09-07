@@ -1,0 +1,29 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.aks74reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 3.251,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload"],
+                  "3.25": [  "/event entity @s gun:full", "/clear @s addon:ak74_mag 0 1", "/give @s addon:ak74_mag_empty", "/scoreboard players set @s aks74 1" ]
+            }
+        },
+        "animation.aks74reload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.8751,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s[hasitem={item=addon:aks74}] slot.weapon.mainhand 0 addon:aks74", "/replaceitem entity @s[hasitem={item=addon:aks74_gp25}] slot.weapon.mainhand 0 addon:aks74_gp25","/event entity @s gun:reload2"],
+                  "1.875": [ "/clear @s addon:aks74 0 1", "/clear @s addon:aks74_gp25 0 1","/function aks74reload", "/scoreboard players set @s aks74 0", "/event entity @s gun:full" ]
+            }
+        },
+        "animation.gp25_aks74_reload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 1.54171,
+            "timeline": {
+                  "0.0": [ "@s aks74_gp25_gl_reload"],
+                  "1.54169": [  "@s aks74_gp25_gl2","/clear @s addon:vog25 0 1", "/title @s actionbar GP-25" ]
+            }
+        }
+    }
+}

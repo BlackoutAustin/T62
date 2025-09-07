@@ -1,0 +1,231 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.m1151_player": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "start": "q.is_riding && query.is_item_name_any('slot.weapon.mainhand',0,'addon:m1151_m2hb_fire')"
+                        }
+                    ]
+                },
+                "start": {
+                    "on_entry": [
+                        "/effect @e[type=addon:m1151_turret,c=1] invisibility 1 1 true"
+                    ],
+                    "transitions": [ 
+                        {
+                          "default": "1.0"
+                        },
+                        {
+                            "stop": "q.is_riding && !query.is_item_name_any('slot.weapon.mainhand',0,'addon:m1151_m2hb_fire')"
+                        }
+                     ]
+                },
+                "stop": {
+                    "on_entry": [
+                        "/effect @e[type=addon:m1151_turret,c=1] invisibility 0 1 true"
+                    ],
+                    "transitions": [ 
+                        {
+                          "default": "1.0"
+                        }
+                     ]
+                }
+            }
+        },
+        "controller.animation.m1151_player_2": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+             "shoot": "query.is_item_name_any('slot.weapon.mainhand',0,'addon:m1151_m2hb_fire') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && q.is_using_item && query.all_animations_finished && query.head_x_rotation(0) <= 22.5"
+                         },
+                         {
+              "reload": "query.is_item_name_any('slot.weapon.mainhand',0,'addon:m1151_m2hb_mag') && !query.equipped_item_any_tag('slot.weapon.mainhand','empty') && q.is_using_item && query.all_animations_finished"
+                          }
+                    ]
+                },
+                "shoot": {
+                "animations": ["m1151_m2hb_fire"],
+                "transitions": [
+                    {
+                      "unfire": "q.all_animations_finished"
+                    }
+                       ]
+                    },
+                    "unfire": {
+                      "transitions": [
+                        {
+                          "default": "1.0"
+                        }
+                      ],
+                      "on_entry": [
+                        "/fill ^10^10^10 ^-10^-6^-10 air replace light_block",
+                        "@s unfire"
+                      ]
+                    },
+                    "reload": {
+                      "transitions": [
+                        {
+                          "default": "1.0"
+                        }
+                      ],
+                      "on_entry": [
+                        "/event entity @e[type=addon:m1151_turret,c=1,r=2] m1151_reload"
+                      ]
+                    }
+            }
+        },
+        "controller.animation.m1151_turret": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "start": "q.has_player_rider && q.scoreboard('m1151_m2hb') != 200"
+                        },
+                        {
+                            "start_empty": "q.has_player_rider && q.scoreboard('m1151_m2hb') == 200"
+                        }
+                    ]
+                },
+                "start": {
+                    "on_entry": [
+                        "/give @p[c=1] addon:m1151_m2hb_fire 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}"
+                    ],
+                    "transitions": [
+                        {
+                          "default": "!q.has_player_rider"
+                        },
+                        {
+                            "start_empty": "q.scoreboard('m1151_m2hb') == 200"
+                        }
+                     ]
+                },
+                "start_empty": {
+                    "on_entry": [
+                        "/give @p[c=1] addon:m1151_m2hb_mag 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}"
+                    ],
+                    "transitions": [ 
+                        {
+                          "reload": "query.property('m1151:m2hb') == 1"
+                        },
+                        {
+                          "default": "!q.has_player_rider"
+                        }
+                     ]
+                },
+                "reload": {
+                "animations": ["m1151_m2hb_reload"],
+                "transitions": [
+                    {
+                      "default": "!q.has_player_rider"
+                    },
+                    {
+                      "start": "q.all_animations_finished"
+                    }
+                       ]
+                    }
+            } 
+        },
+        "controller.animation.m1151_dviglo": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "da2": "query.health < 999500"
+                        }
+                    ]
+                },
+                "da2": {
+                    "on_entry": [
+                        "/effect @e[type=addon:m1151,c=1] slowness 2 222"
+                    ],
+                    "transitions": [ 
+                        {
+                          "default": "1.0"
+                        }
+                     ]
+                }
+            }
+        },
+        "controller.animation.m1151": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "dviglo": "q.mark_variant != 2 && q.is_alive && !q.has_rider"
+                        },
+                        {
+                            "start": "q.has_player_rider"
+                        }
+                    ]
+                },
+                "dviglo": {
+                    "on_entry": [
+                        "/summon addon:m1151_dviglo",
+                        "/ride @e[type=addon:m1151_dviglo,c=1] start_riding @s",
+                        "/summon addon:m1151_kapsula",
+                        "/ride @e[type=addon:m1151_kapsula,c=1] start_riding @s",
+                        "/summon addon:m1151_pass",
+                        "/summon addon:m1151_pass",
+                        "/summon addon:m1151_pass",
+                        "/ride @e[type=addon:m1151_pass,c=3] start_riding @s",
+                        "/summon addon:m1151_turret",
+                        "/ride @e[type=addon:m1151_turret,c=1] start_riding @s"
+                    ],
+                    "transitions": [
+                        {
+                            "start": "q.has_player_rider"
+                        }
+                    ]
+                },
+                "start": {
+                    "transitions": [
+                          {
+                            "stop": "!q.has_player_rider"
+                          }
+                    ],
+                    "on_entry": [
+                        "@s addon:sperma"
+                    ]
+                },
+                "stop": {
+                    "transitions": [
+                          {
+                            "start": "q.has_player_rider"
+                          },
+                          {
+                            "stop2": "1.0"
+                          }
+                    ],
+                    "on_entry": [
+                        "/ride @e[type=addon:m1151_dviglo,c=1] stop_riding",
+                        "/ride @e[type=addon:m1151_kapsula,c=1] stop_riding",
+                        "/ride @e[type=addon:m1151_pass,c=3] stop_riding",
+                        "/ride @e[type=addon:m1151_turret,c=1] stop_riding",
+                        "@s addon:unsperma",
+                        "/ride @e[type=addon:m1151_dviglo,c=1] start_riding @e[type=addon:m1151,c=1]",
+                        "/ride @e[type=addon:m1151_kapsula,c=1] start_riding @e[type=addon:m1151,c=1]",
+                        "/ride @e[type=addon:m1151_pass,c=3] start_riding @e[type=addon:m1151,c=1]",
+                        "/ride @e[type=addon:m1151_turret,c=1] start_riding @e[type=addon:m1151,c=1]"
+                    ]
+                },
+                "stop2": {
+                    "transitions": [
+                          {
+                            "start": "q.has_player_rider"
+                          }
+                    ],
+                    "on_entry": [
+                        "/ride @e[type=addon:m1151_dviglo,c=1] start_riding @e[type=addon:m1151,c=1]",
+                        "/ride @e[type=addon:m1151_kapsula,c=1] start_riding @e[type=addon:m1151,c=1]",
+                        "/ride @e[type=addon:m1151_pass,c=3] start_riding @e[type=addon:m1151,c=1]",
+                        "/ride @e[type=addon:m1151_turret,c=1] start_riding @e[type=addon:m1151,c=1]"
+                    ]
+                }
+            }
+        }
+    }
+}

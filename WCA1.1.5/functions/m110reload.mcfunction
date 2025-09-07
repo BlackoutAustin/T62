@@ -1,0 +1,20 @@
+give @s[scores={m110=20}] addon:m110_mag_empty
+give @s[scores={m110=19}] addon:m110_mag_empty 1 19
+give @s[scores={m110=18}] addon:m110_mag_empty 1 18
+give @s[scores={m110=17}] addon:m110_mag_empty 1 17
+give @s[scores={m110=16}] addon:m110_mag_empty 1 16
+give @s[scores={m110=15}] addon:m110_mag_empty 1 15
+give @s[scores={m110=14}] addon:m110_mag_empty 1 14
+give @s[scores={m110=13}] addon:m110_mag_empty 1 13
+give @s[scores={m110=12}] addon:m110_mag_empty 1 12
+give @s[scores={m110=11}] addon:m110_mag_empty 1 11
+give @s[scores={m110=10}] addon:m110_mag_empty 1 10
+give @s[scores={m110=9}] addon:m110_mag_empty 1 9
+give @s[scores={m110=8}] addon:m110_mag_empty 1 8
+give @s[scores={m110=7}] addon:m110_mag_empty 1 7
+give @s[scores={m110=6}] addon:m110_mag_empty 1 6
+give @s[scores={m110=5}] addon:m110_mag_empty 1 5
+give @s[scores={m110=4}] addon:m110_mag_empty 1 4
+give @s[scores={m110=3}] addon:m110_mag_empty 1 3
+give @s[scores={m110=2}] addon:m110_mag_empty 1 2
+give @s[scores={m110=1}] addon:m110_mag_empty 1 1

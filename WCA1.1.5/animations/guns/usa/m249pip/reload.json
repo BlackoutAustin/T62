@@ -1,0 +1,22 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.m249pipreload": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.51,
+            "timeline": {
+                  "0.0": [ "/event entity @s gun:reload", "/scoreboard players set @s m249pip 1","v.m249pip_ammo = q.scoreboard('m249pip');", "@s m249pip_reload"],
+                  "5.5": [  "/event entity @s gun:full", "/clear @s addon:m249_mag 0 1", "/give @s addon:m249_mag_empty", "/scoreboard players set @s m249pip 1","v.m249pip_ammo = q.scoreboard('m249pip');", "@s m249pip_reload" ]
+            }
+        },
+        "animation.m249pipreload2": {
+            "loop":"hold_on_last_frame",
+            "animation_length": 5.1251,
+            "timeline": {
+                  "0.0": [ "/replaceitem entity @s[hasitem={item=addon:m249pip}] slot.weapon.mainhand 0 addon:m249pip", "/replaceitem entity @s[hasitem={item=addon:m249pip_m68}] slot.weapon.mainhand 0 addon:m249pip_m68", "/replaceitem entity @s[hasitem={item=addon:m249pip_eotech}] slot.weapon.mainhand 0 addon:m249pip_eotech", "/event entity @s gun:reload2"],
+                  "3.0": [  "/function m249pipreload", "/scoreboard players set @s m249pip 0","v.m249pip_ammo = q.scoreboard('m249pip');", "@s m249pip_reload"],
+                  "5.125": [  "/clear @s addon:m249pip 0 1", "/clear @s addon:m249pip_m68 0 1", "/clear @s addon:m249pip_eotech 0 1", "v.m249pip_ammo = q.scoreboard('m249pip');", "/event entity @s gun:full" ]
+            }
+        }
+    }
+}

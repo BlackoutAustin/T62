@@ -1,0 +1,74 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.armor_system": {
+          "initial_state": "default",
+          "states": {
+          "default": {
+          "transitions": [
+                         {
+                          "br3": "query.equipped_item_any_tag('slot.armor.chest','br3')"
+                         },
+                         {
+                          "br2": "query.equipped_item_any_tag('slot.armor.chest','br2')"
+                         },
+                         {
+                          "br1": "query.equipped_item_any_tag('slot.armor.chest','br1')"
+                         },
+                         {
+                          "br0": "!query.equipped_item_any_tag('slot.armor.chest','br1')&& !query.equipped_item_any_tag('slot.armor.chest','br2') && !query.equipped_item_any_tag('slot.armor.chest','br3')"
+                         }
+                  ]
+              },
+              "br0": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+          "on_entry": [
+            "/tag @s remove br3",
+            "/tag @s remove br2",
+            "/tag @s remove br1"
+          ]
+              },
+              "br3": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/tag @s add br3",
+                  "/tag @s remove br2",
+                  "/tag @s remove br1"
+                ]
+              },
+              "br2": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/tag @s add br2",
+                  "/tag @s remove br3",
+                  "/tag @s remove br1"
+                ]
+              },
+              "br1": {
+                "transitions": [
+                  {
+                    "default": "1.0"
+                  }
+                ],
+                "on_entry": [
+                  "/tag @s add br1",
+                  "/tag @s remove br2",
+                  "/tag @s remove br3"
+                ]
+              }
+          }
+      }
+  }
+}
