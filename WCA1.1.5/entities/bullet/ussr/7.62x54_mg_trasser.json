@@ -1,5 +1,5 @@
 {
-    "format_version": "1.8.0",
+    "format_version": "1.16.0",
     "minecraft:entity": {
         "description": {
             "identifier": "addon:7.62x54_bullet_mg_trasser",

@@ -1,20 +1,5 @@
-/*
-
-	Hello, dear fellow reverse engineers :D
-
-	You can tear this addon apart 
-	and rip the parts off 
-	and make it your own, 
-	please just make sure 
-	you give me the proper credits.
-	Thank you.
-
-	- MyoHtet @bmheades
-
-*/
-
 {
-	"format_version": 1,
+	"format_version": "1.16.0",
 	"header": {
 		"description": "Addon by bmheades and Davo",
 		"name": "T62 Tank Addon [BP]",
